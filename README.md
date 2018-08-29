@@ -513,7 +513,7 @@ http {
 }
 ```
 
-###3、 启动pm2守护
+### 3、 启动pm2守护
 
 PC端根目录移动端根目录下分别启动
 **pm2 start process.json**
