@@ -1,0 +1,31 @@
+{
+  "name": "visney",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "Sandop <dpjsdu@163.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/sitemap": "^0.1.1",
+    "axios": "^0.18.0",
+    "fs": "0.0.1-security",
+    "nuxt": "^1.0.0",
+    "nuxt-seo-module": "^1.0.0",
+    "vue-baidu-map": "^0.21.10",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
