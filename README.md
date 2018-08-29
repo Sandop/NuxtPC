@@ -147,9 +147,11 @@ router路由相关的文件，`nuxt` 中在pages文下面，pages 目录中的�
 
 参考https://github.com/nuxt-community/sitemap-module，上面有详细的介绍，这里只写一写我项目中使用到的
 
-第一步、进行npm安装`@nuxtjs/sitemap`
-第二步、nuxt.config.js中引入  ` modules: [ '@nuxtjs/sitemap']`
-第三步、配置sitemap
+>第一步、进行npm安装`@nuxtjs/sitemap`;
+
+>第二步、nuxt.config.js中引入  ` modules: [ '@nuxtjs/sitemap']`;
+
+>第三步、配置sitemap;
 ``` javascript
     sitemap: {
         path: '/sitemap.xml',
@@ -187,10 +189,13 @@ router路由相关的文件，`nuxt` 中在pages文下面，pages 目录中的�
 | nuxt generate | 编译应用，并依据路由配置生成对应的 HTML 文件 (用于静态站点的部署)    |
 
 
-第一步、在本地 `npm run build`,会在.nuxt文件夹下生成dist文件;
-第二步、把本地文件的`.nuxt`,`static`,`package.json`,`nuxt.config.js`,这四个文件夹放到服务器目录文件下，我在服务器上创建了run/www/visneyNuxt路径，四个文件放到里面;
-第三步、用cmd进入目录文件夹，安装依赖，`npm install -d`
-第四步、`npm start` 此时运行的是 http://localhost:3000
+>第一步、在本地 `npm run build`,会在.nuxt文件夹下生成dist文件;
+
+>第二步、把本地文件的`.nuxt`,`static`,`package.json`,`nuxt.config.js`,这四个文件夹放到服务器目录文件下，我在服务器上创建了run/www/visneyNuxt路径，四个文件放到里面;
+
+>第三步、用cmd进入目录文件夹，安装依赖，`npm install -d`;
+
+>第四步、`npm start` 此时运行的是 http://localhost:3000;
 
 ### 2、Nginx配置
 
@@ -199,13 +204,17 @@ router路由相关的文件，`nuxt` 中在pages文下面，pages 目录中的�
 这时候就改Nginx出场时候啦，当当当当~~~
 
 #### (1)、Nginx安装
-第一步、Nginx 的安装步骤比较简单，安装在windows上推荐使用压缩包的安装方式，[下载地址](http://nginx.org/en/download.html);
-第二步、有稳定版本和最新版本及以前版本，推荐使用稳定版本开发
-第三步、下载完成之后，进行解压可以看到如下 文件结构
+>第一步、Nginx 的安装步骤比较简单，安装在windows上推荐使用压缩包的安装方式，[下载地址](http://nginx.org/en/download.html);
+
+>第二步、有稳定版本和最新版本及以前版本，推荐使用稳定版本开发;
+
+>第三步、下载完成之后，进行解压可以看到如下 文件结构;
 ![](https://images2017.cnblogs.com/blog/1090511/201712/1090511-20171212094929212-636366685.png)
-第四步、双击nginx,exe 就启动了。在页面输入localhost。出现如下界面则表示安装成功。默认监听80端口号
+
+>第四步、双击nginx,exe 就启动了。在页面输入localhost。出现如下界面则表示安装成功。默认监听80端口号
 ![](https://images2017.cnblogs.com/blog/1090511/201712/1090511-20171212100522962-1722554819.png)
-第五步、若你的服务器上80端口被占用，需要修改端口，Windows 下 安装目录\conf\nginx.conf中的
+
+>第五步、若你的服务器上80端口被占用，需要修改端口，Windows 下 安装目录\conf\nginx.conf中的
 ```
 server {
  listen  80;
@@ -228,8 +237,9 @@ server {
 
 这里说明下我的配置，详细参数说明请百度了解
 
-第一步、找到安装目录下conf 文件下的nginx.conf文件 打开进行 属性配置
-第二步、配置代码参考了很多的文档，主要参考https://segmentfault.com/a/1190000012774650，代码如下
+>第一步、找到安装目录下conf 文件下的nginx.conf文件 打开进行 属性配置
+
+>第二步、配置代码参考了很多的文档，主要参考https://segmentfault.com/a/1190000012774650，代码如下
 ```
     worker_processes  1;
 
@@ -268,8 +278,9 @@ server {
         }
     }
 ```
-第三步、在nginx根目录下打开命令窗口，`nginx -t` 查看nginx的配置文件的目录
-第四步、若缇诗没有问题，`nginx -s reload` 重新载入nginx(当配置信息发生修改时)
+>第三步、在nginx根目录下打开命令窗口，`nginx -t` 查看nginx的配置文件的目录
+
+>第四步、若缇诗没有问题，`nginx -s reload` 重新载入nginx(当配置信息发生修改时)
 
 Nginx其他命令：
 > `start nginx`           windows下的启动命令
@@ -333,9 +344,11 @@ pm2 delete all                       #删除PM2列表中所有的进程
 
 ### 2、Nginx配置
 
-第一步、移动端Nuxt项目监听端口为127.0.0.1:3001
-第二步、这里移动端访问配置了二级域名http://m.visney.cn/，
-第三步、在nginx中配置了移动端访问和PC端访问的判断
+>第一步、移动端Nuxt项目监听端口为127.0.0.1:3001
+
+>第二步、这里移动端访问配置了二级域名http://m.visney.cn/，
+
+>第三步、在nginx中配置了移动端访问和PC端访问的判断
 
 ```
 upstream nodenuxtphone {
