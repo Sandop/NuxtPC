@@ -226,9 +226,10 @@
 	/*banner end*/
 	/* Recommend Products start */
 		 div#recom-products {
-		     width:  100%;
-		     height:  auto;
-		 }
+			display: none;
+			width: 100%;
+			height: auto;
+		}
 
 		 .recom-products-box {
 		     overflow:  hidden;

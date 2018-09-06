@@ -38,7 +38,7 @@
 	                		</div>
 	                		<div class="recom-info-title-box">
 	                			<div class="recom-info-title">
-	                				<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}">{{list.articleName}}</nuxt-link>
+	                				<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}"><h2>{{list.articleName}}</h2></nuxt-link>
 	                			</div>
 	                			<div class="recom-info-times">
 	                				<p>{{list.articleAddTime}}</p>
@@ -70,7 +70,7 @@
 						<ul>
 							<li class="company-info-list" v-for="(list,index) in companyInfo" :key="list.articleId">
 	                			<div class="company-info-title">
-	                				<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}">{{list.articleName}}</nuxt-link>
+	                				<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}"><h2>{{list.articleName}}</h2></nuxt-link>
 	                			</div>
 	                			<div class="company-info-desc">{{getTxt(list.articleText,index,90)}}</div>
 	                		</li>
@@ -90,7 +90,7 @@
 						<ul>
 							<li class="industry-info-list" v-for="(list,index) in industryInfo" :key="list.articleId">
 	                            <div class="industry-info-title">
-	                                <nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}">{{list.articleName}}</nuxt-link>
+	                                <nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}"><h2>{{list.articleName}}</h2></nuxt-link>
 	                            </div>
 	                            <div class="industry-info-desc">{{getTxt(list.articleText,index,90)}}</div>
 	                        </li>
@@ -121,7 +121,7 @@
 								</nuxt-link>
 							</div>
 							<div class="fur-ency-list-title">
-								<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}">{{list.articleName}}</nuxt-link>
+								<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}"><h2>{{list.articleName}}</h2></nuxt-link>
 							</div>
 							<div class="fur-ency-list-desc">{{getTxt(list.articleText,index,115,32)}}</div>
 							<div class="fur-ency-list-time">
@@ -154,7 +154,7 @@
 								</nuxt-link>
 	            			</div>
 	            			<div class="brand-selection-list-title">
-	            				<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}">{{list.articleName}}</nuxt-link>
+	            				<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}"><h2>{{list.articleName}}</h2></nuxt-link>
 	            			</div>
 	            			<div class="brand-selection-list-desc">{{getTxt(list.articleText,index,115,32)}}</div>
 	            			<div class="brand-selection-list-time">
@@ -187,7 +187,7 @@
 								</nuxt-link>
 	            			</div>
 	            			<div class="decoration-place-title">
-	            				<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}">{{list.articleName}}</nuxt-link>
+	            				<nuxt-link target="_blank" :to="{name: 'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}"><h2>{{list.articleName}}</h2></nuxt-link>
 	            			</div>
 	            			<div class="decoration-place-time"><p>{{getTime(list.articleAddTime)}}</p></div>
 	            		</li>
@@ -428,6 +428,16 @@
 		    white-space:  nowrap;
 		}
 
+		.recom-info-title a h2{
+		    display:  block;
+		    overflow:  hidden;
+		    width:  100%;
+		    height:  100%;
+			font-weight: normal;
+		    text-overflow:  ellipsis;
+		    white-space:  nowrap;
+		}
+
 		.recom-info-title a:hover{
 			text-decoration: underline;
 		}
@@ -624,6 +634,15 @@
 			    white-space:  nowrap;
 			}
 
+			.company-info-title a h2{
+			    overflow:  hidden;
+			    width:  100%;
+			    height: 100%;
+			    font-weight: normal;
+			    text-overflow:  ellipsis;
+			    white-space:  nowrap;
+			}
+
 			.company-info-title a:hover{
 				text-decoration: underline;
 			}
@@ -739,6 +758,15 @@
 			    width:  100%;
 			    height: 100%;
 			    color:  #22202b;
+			    text-overflow:  ellipsis;
+			    white-space:  nowrap;
+			}
+
+			.industry-info-title a h2{
+			    overflow:  hidden;
+			    width:  100%;
+			    height: 100%;
+			    font-weight:  normal;
 			    text-overflow:  ellipsis;
 			    white-space:  nowrap;
 			}
@@ -882,6 +910,16 @@
 		    white-space:  nowrap;
 		}
 
+		.fur-ency-list-title a h2{
+		    display: block;
+		    overflow: hidden;
+		    width:  100%;
+		    height:  100%;
+		    font-weight:  normal;
+		    text-overflow:  ellipsis;
+		    white-space:  nowrap;
+		}
+
 		.fur-ency-list-title a:hover{
 			text-decoration: underline;
 		}
@@ -1017,6 +1055,16 @@
 		    width:  100%;
 		    height:  100%;
 		    color:  #22202b;
+		    text-overflow:  ellipsis;
+		    white-space:  nowrap;
+		}
+
+		.brand-selection-list-title a h2{
+		    display: block;
+		    overflow: hidden;
+		    width:  100%;
+		    height:  100%;
+		    font-weight:  normal;
 		    text-overflow:  ellipsis;
 		    white-space:  nowrap;
 		}
@@ -1160,6 +1208,16 @@
 		    width:  100%;
 		    height:  100%;
 		    color: #666;
+		    text-overflow:  ellipsis;
+		    white-space:  nowrap;
+		}
+
+		.decoration-place-title a h2{
+		    display:  block;
+		    overflow: hidden;
+		    width:  100%;
+		    height:  100%;
+		    font-weight: normal;
 		    text-overflow:  ellipsis;
 		    white-space:  nowrap;
 		}

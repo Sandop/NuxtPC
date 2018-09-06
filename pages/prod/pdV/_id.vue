@@ -48,7 +48,7 @@
 					</div>
 					<div class="products-wrod-wrap">
 						<div class="products-view-title">
-							<p>{{prodViewData.proName}}</p>
+							<h1>{{prodViewData.proName}}</h1>
 						</div>
 						<div class="products-price">
 							<div class="products-price-word">价格</div>

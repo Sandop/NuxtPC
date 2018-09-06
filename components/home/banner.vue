@@ -3,14 +3,14 @@
 		<div class="i-b-container">
 			<transition-group tag="div" class="part-box" name="listNext" v-show="isLeft">
 				<div class="b-c-part" v-for="(list,index) in bannerData" :key="index" v-show="index === currentIndex" @mouseenter="stop" @mouseleave="go">
-					<a :href="`${list.href}`" target="_blank" :ref="`${list.ref}`">
+					<a :href="list.href" target="_blank" :rel="list.ref">
 						<img :src="list.bannerSrc" :alt="list.bannerAlt">
 					</a>
 				</div>
 			</transition-group>
 			<transition-group tag="div" class="part-box" name="listPrev" v-show="!isLeft">
 				<div class="b-c-part" v-for="(list,index) in bannerData" :key="index" v-show="index === currentIndex" @mouseenter="stop" @mouseleave="go">
-					<a :href="`${list.href}`" target="_blank" :ref="`${list.ref}`">
+					<a :href="list.href" target="_blank" :rel="list.ref">
 						<img :src="list.bannerSrc" :alt="list.bannerAlt">
 					</a>
 				</div>

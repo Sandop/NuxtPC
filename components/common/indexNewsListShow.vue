@@ -8,7 +8,7 @@
 	        <div class="news-first-right">
 	            <div class="news-first-right-title-box">
 	                <div class="news-first-title">
-	                    <nuxt-link target="_blank" :to="{name:'news-newsView-id',params:{id:indexFirstNewsList.articleId},query: {category: indexFirstNewsList.articleCategoryId}}">{{indexFirstNewsList.articleName}}</nuxt-link>
+	                    <nuxt-link target="_blank" :to="{name:'news-newsView-id',params:{id:indexFirstNewsList.articleId},query: {category: indexFirstNewsList.articleCategoryId}}"><b>{{indexFirstNewsList.articleName}}</b></nuxt-link>
 	                </div>
 	                <div class="news-first-times">
 	                    <p>{{indexFirstNewsList.articleAddTime}}</p>
@@ -25,7 +25,7 @@
 	    <ul>
             <li v-for="(item,index) in indexNewsList" :key="index">
                 <div class="news-list-title">
-                    <nuxt-link target="_blank" :to="{name:'news-newsView-id',params:{id:item.articleId},query: {category: item.articleCategoryId}}">{{item.articleName}}</nuxt-link>
+                    <nuxt-link target="_blank" :to="{name:'news-newsView-id',params:{id:item.articleId},query: {category: item.articleCategoryId}}"><b>{{item.articleName}}</b></nuxt-link>
                 </div>
                 <div class="news-list-times">
                     <p>{{getTime(item.articleAddTime)}}</p>
@@ -130,6 +130,17 @@
         width:  100%;
         height:  100%;
         color: #22202b;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    
+    .news-tab-box b {
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-weight: normal;
         text-overflow: ellipsis;
         white-space: nowrap;
     }

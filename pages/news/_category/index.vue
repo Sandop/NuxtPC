@@ -36,7 +36,7 @@
 			                            </div>
 			                            <div class="news-list-right">
 			                                <div class="news-list-title">
-			                                    <nuxt-link target="_blank" :to="{name:'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}">{{list.articleName}}</nuxt-link>
+			                                    <nuxt-link target="_blank" :to="{name:'news-newsView-id',params:{id:list.articleId},query: {category: list.articleCategoryId}}"><h2>{{list.articleName}}</h2></nuxt-link>
 			                                </div>
 			                                <div class="news-list-desc">{{getTxt(list.articleText)}}</div>
 			                                <div class="news-list-bottom">
@@ -380,6 +380,17 @@
 		    font-size:  22px;
 		    line-height:  56px;
 		    text-align:  left;
+		    text-overflow:  ellipsis;
+		    white-space:  nowrap;
+		}
+
+		.news-list-title a h2{
+		    display:  block;
+		    overflow:  hidden;
+		    width:  100%;
+		    height:  100%;
+		    font-weight:  normal;
+		    font-size:  22px;
 		    text-overflow:  ellipsis;
 		    white-space:  nowrap;
 		}

@@ -2,7 +2,7 @@
     <div class="prod-link-box">
         <div class="prod-link-room" v-for="(list,index) in $store.state.headProdNav" :key="list.proCategoryId" @click="showHidenFn(index)" v-if="index<4">
             <div class="prod-link-title">
-                <span class="prod-link-title-word">{{list.proCategoryName}}</span>
+                <span class="prod-link-title-word"><h2>{{list.proCategoryName}}</h2></span>
                 <span class="prod-link-mark">
                     <span v-show="isShow"></span>
                     <span class="prod-link-minus" v-show="showHidenChange[index]">-</span>
@@ -13,7 +13,7 @@
                 <ul>
                     <li class="prod-link-list" v-for="item in $store.state.headProdNav[index].children" :key="item.proCategoryId">
                         <nuxt-link target="_blank" :to="{name: 'prod-typeId',params: {typeId: list.proCategoryId},query: {classId: item.proCategoryId}}">
-                            <span>·</span><span class="prod-link-cont">{{item.proCategoryName}}</span>
+                            <span>·</span><h3 class="prod-link-cont">{{item.proCategoryName}}</h3>
                         </nuxt-link>
                     </li>
                 </ul>
@@ -106,8 +106,14 @@ export default {
         color: #858585;
     }
 
-    span.prod-link-cont {
+    .prod-link-list a span {
+        float: left;
+    }
+
+    .prod-link-cont {
+        float: left;
         margin-left: 5px;
+        font-weight: normal;
     }
 
     li.prod-link-list a:hover {
