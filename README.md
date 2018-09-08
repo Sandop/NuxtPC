@@ -534,13 +534,17 @@ PC端根目录移动端根目录下分别启动
 
 OK，项目完成！！
 
-###4、 pm2浏览器中使用可视化的窗口
+### 4、 pm2浏览器中使用可视化的窗口
 
 pm2项目成功之后可以在服务器的浏览器上可视化的视图,可以在网页中监控,效果如下：
 
 ![](https://user-gold-cdn.xitu.io/2018/9/8/165b843adb2eb91b?w=1917&h=835&f=png&s=213601)
 
+
+
 > [登录地址](https://app.keymetrics.io) `https://app.keymetrics.io`
+
+
 
 第一步：登录注册，我在这里使用的是Github账号登录，如下：
 ![](https://user-gold-cdn.xitu.io/2018/9/8/165b851c5a7bda0e?w=585&h=674&f=jpeg&s=28368)
