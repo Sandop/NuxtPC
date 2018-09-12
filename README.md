@@ -211,7 +211,7 @@ router路由相关的文件，`nuxt` 中在pages文下面，pages 目录中的�
 >第三步、下载完成之后，进行解压可以看到如下 文件结构;
 ![](https://images2017.cnblogs.com/blog/1090511/201712/1090511-20171212094929212-636366685.png)
 
->第四步、双击nginx,exe 就启动了。在页面输入localhost。出现如下界面则表示安装成功。默认监听80端口号
+>第四步、双击nginx,exe 就启动了，windows系统下在cmd窗口中输入 `start nginx`启动。在页面输入localhost。出现如下界面则表示安装成功。默认监听80端口号
 ![](https://images2017.cnblogs.com/blog/1090511/201712/1090511-20171212100522962-1722554819.png)
 
 >第五步、若你的服务器上80端口被占用，需要修改端口，Windows 下 安装目录\conf\nginx.conf中的
