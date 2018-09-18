@@ -4,7 +4,7 @@
 			<div class="index-header-box">
 				<div class="i-h-top">
 					<div class="h-t-contact">
-						<span>联系方式</span><span>招商加盟</span><span>欢迎您进入卫诗理官网！</span>
+						<span>联系方式</span><span>招商加盟</span><span>欢迎您进入<h1>卫诗理</h1>官网！</span>
 					</div>
 					<div class="h-t-logo">
 						<nuxt-link to="/">
@@ -177,6 +177,11 @@
 	    font-size:  12px;
 	    text-align: center;
 	    line-height:  45px;
+	}
+
+	.h-t-contact h1 {
+		display: inline-block;
+		font-weight: normal;
 	}
 
 	.h-t-logo {

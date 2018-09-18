@@ -62,18 +62,23 @@ module.exports = {
     prefetch: false
   },
   modules: [
-    '@nuxtjs/sitemap'
+    'nuxt-robots-module',
+    '@nuxtjs/sitemap',
   ],
+  'nuxt-robots-module': {
+    UserAgent: '*',
+    Disallow: '/',
+    Sitemap: 'http://www.visney.cn/sitemap.xml'
+  },
   sitemap: {
     cacheTime: 1000 * 60 * 60 * 24,
     gzip: false,
-    generate: false,
+    generate: true,
     routes () {
       return  axios.get('http://visney.cn:81/product/selectAllIds')
       .then(res => res.data.map(
         prodView => '/prod/pdV/' + prodView.id + '?typeId=' + prodView.typeId + '&classId=' + prodView.classId
       ))
-
       // axios.get('http://visney.cn:81/article/selectAllIds')
       // .then(res => res.data.map(
       //   newsView => '/news/newsView/' + newsView.articleId + '?category=' + newsView.category
