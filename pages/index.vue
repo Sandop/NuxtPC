@@ -265,11 +265,10 @@
               </ul>
               <div class="products-tab-content">
                 <prodListShow :prodList="indexProdList6" :showNewMore="true" :typeId="97" v-show="0 == clickProdIndex"></prodListShow>
-                <prodListShow :prodList="indexProdList5" :showMore="false" :typeId="96" v-show="1 == clickProdIndex"></prodListShow>
-                <prodListShow :prodList="indexProdList1" :showMore="true" :typeId="1" v-show="2 == clickProdIndex"></prodListShow>
-                <prodListShow :prodList="indexProdList2" :showMore="true" :typeId="2" v-show="3 == clickProdIndex"></prodListShow>
-                <prodListShow :prodList="indexProdList3" :showMore="true" :typeId="3" v-show="4 == clickProdIndex"></prodListShow>
-                <prodListShow :prodList="indexProdList4" :showMore="true" :typeId="4" v-show="5 == clickProdIndex"></prodListShow>
+                <prodListShow :prodList="indexProdList1" :showMore="true" :typeId="1" v-show="1 == clickProdIndex"></prodListShow>
+                <prodListShow :prodList="indexProdList2" :showMore="true" :typeId="2" v-show="2 == clickProdIndex"></prodListShow>
+                <prodListShow :prodList="indexProdList3" :showMore="true" :typeId="3" v-show="3 == clickProdIndex"></prodListShow>
+                <prodListShow :prodList="indexProdList4" :showMore="true" :typeId="4" v-show="4 == clickProdIndex"></prodListShow>
               </div>
             </div>
           </div>
@@ -363,7 +362,6 @@
 			let indexProdList2 = await axios(`${store.state.wordpressAPI}/product/selectByPosition/2`);
 			let indexProdList3 = await axios(`${store.state.wordpressAPI}/product/selectByPosition/3`);
       let indexProdList4 = await axios(`${store.state.wordpressAPI}/product/selectByPosition/4`);
-      let indexProdList5 = await axios(`${store.state.wordpressAPI}/product/selectByPosition/96`);
       let indexProdList6 = await axios(`${store.state.wordpressAPI}/product/selectByPosition/97`);
 
       return {
@@ -386,7 +384,6 @@
         indexProdList2: indexProdList2.data,
         indexProdList3: indexProdList3.data,
         indexProdList4: indexProdList4.data,
-        indexProdList5: indexProdList5.data,
         indexProdList6: indexProdList6.data,
       } 
     },
