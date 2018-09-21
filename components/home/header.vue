@@ -4,7 +4,7 @@
 			<div class="index-header-box">
 				<div class="i-h-top">
 					<div class="h-t-contact">
-						<span>联系方式</span><span>招商加盟</span><span>欢迎您进入<h1>卫诗理</h1>官网！</span>
+						<nuxt-link to="/service/contact">联系方式</nuxt-link><nuxt-link to="/join">招商加盟</nuxt-link><span>欢迎您进入<h1>卫诗理</h1>官网！</span>
 					</div>
 					<div class="h-t-logo">
 						<nuxt-link to="/">
@@ -18,8 +18,11 @@
 						<div class="t-m-login">
 							<a href="#">登录</a>
 						</div>
-						<div class="t-m-mobile">
+						<div class="t-m-mobile" @click="showCode">
 							<a href="#">移动版</a>
+						</div>
+						<div class="t-m-mobile-code" v-if="isShowCode">
+							<img src="~/assets/images/index/index-mobile.png" alt="卫诗理">
 						</div>
 					</div>
 					
@@ -110,7 +113,8 @@
 		data (){
 			return {
 				headFixed:false,
-				maxClientWidth: 980
+				maxClientWidth: 980,
+				isShowCode: false
 			}
 		},
 		computed: {
@@ -130,6 +134,9 @@
 				} else {
 					this.headFixed = false;
 				}
+			},
+			showCode (){
+				this.isShowCode = !this.isShowCode
 			}
 		},
 		destroyed (){
@@ -194,6 +201,7 @@
 	}
 
 	.h-t-mobile {
+		position: relative;
 	    float:  right;
 	    height: 45px;
 	    margin-right: 66px;
@@ -205,6 +213,24 @@
 	.h-t-contact>span {
 	    padding: 0 10px;
 	}
+
+	.h-t-contact>a {
+	    padding: 0 10px;
+		color:  #a2a1a2;
+	}
+
+	.t-m-mobile-code {
+		position: absolute;
+		top: 45px;
+		right: 0;
+		width: 100px;
+		height: 100px;
+	}
+
+	.t-m-mobile-code img {
+		width: 100%;
+	}
+
 	.h-t-mobile>div {
 	    float:  left;
 	    padding:  0 12px;

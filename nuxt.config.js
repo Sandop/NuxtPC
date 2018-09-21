@@ -17,6 +17,11 @@ module.exports = {
       { hid: 'description', name: 'description', content: '卫诗理'},
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=no' },
+
+      /*新增搜狗、神马、360 */
+      { name: '360-site-verification', content: '850970beabd63bd397272b6dd73a1aba' },
+      { name: 'sogou_site_verification', content: 'y3fi8ttkxP' },
+      { name: 'shenma-site-verification', content: '15230d9dfb2e66bfecf2408862f2462c_1537497601' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -62,14 +67,15 @@ module.exports = {
     prefetch: false
   },
   modules: [
-    'nuxt-robots-module',
+    // 'nuxt-robots-module',
     '@nuxtjs/sitemap',
   ],
-  'nuxt-robots-module': {
-    UserAgent: '*',
-    Disallow: '/',
-    Sitemap: 'http://www.visney.cn/sitemap.xml'
-  },
+  //添加robots.txt文件，可以使用插件方法也可以直接在static文件夹中放入robots.txt都可以访问到
+  // 'nuxt-robots-module': {
+  //   UserAgent: '*',
+  //   Disallow: '/',
+  //   Sitemap: 'http://www.visney.cn/sitemap.xml'
+  // },
   sitemap: {
     cacheTime: 1000 * 60 * 60 * 24,
     gzip: false,

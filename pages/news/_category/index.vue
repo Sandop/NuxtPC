@@ -613,7 +613,7 @@
 		.recom-products-list-img {
 		    overflow:  hidden;
 		    width:  100%;
-		    height:  105px;
+		    height:  200px;
 		}
 
 		.recom-products-list-img img {
