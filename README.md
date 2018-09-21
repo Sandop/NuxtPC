@@ -169,7 +169,15 @@ router路由相关的文件，`nuxt` 中在pages文下面，pages 目录中的�
 ```
 
 
+#### (4)、新增robots.txt文件
 
+方法一：使用插件
+
+>参考 `https://github.com/WilliamDASILVA/nuxt-robots-module`，上面有详细的介绍
+
+方法二：static文件
+
+直接在static文件夹中放入 `robots.txt` 文件即可，可以通过 `http://www.visney.cn/robots.txt` 查看效果
 
 
 
