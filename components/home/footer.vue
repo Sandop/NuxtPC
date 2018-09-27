@@ -21,11 +21,21 @@
 							<li class="footer-nav-list">
 								<nuxt-link to="/brand">品牌介绍</nuxt-link>
 								<ul class="footer-nav-child">
-									<li class="footer-nav-child-list"><a herf="brand#brand-story">品牌故事</a></li>
-									<li class="footer-nav-child-list"><a href="brand#brand-background">品牌背景</a></li>
-									<li class="footer-nav-child-list"><a href="brand#brand-development">发展历程</a></li>
-									<li class="footer-nav-child-list"><a href="brand#brand-concept">品牌理念</a></li>
-									<li class="footer-nav-child-list"><a href="brand#brand-strength">品牌荣誉</a></li>
+									<li class="footer-nav-child-list">
+										<nuxt-link to="/brand#brand-story">品牌故事</nuxt-link>
+									</li>
+									<li class="footer-nav-child-list">
+										<nuxt-link to="/brand#brand-background">品牌背景</nuxt-link>
+									</li>
+									<li class="footer-nav-child-list">
+										<nuxt-link to="/brand#brand-development">发展历程</nuxt-link>
+									</li>
+									<li class="footer-nav-child-list">
+										<nuxt-link to="/brand#brand-concept">品牌理念</nuxt-link>
+									</li>
+									<li class="footer-nav-child-list">
+										<nuxt-link to="/brand#brand-strength">品牌荣誉</nuxt-link>
+									</li>
 								</ul>
 							</li>
 							<li class="footer-nav-list">
