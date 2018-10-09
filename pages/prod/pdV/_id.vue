@@ -136,7 +136,7 @@
 <script>
 	import axios from 'axios'
   	import prodListShow from '~/components/common/prodListShow'
-	import ProdViewImages from '~/components/products/ProdViewImages'
+	import ProdViewImages from '~/components/products/prodViewImages'
   	import prodViewLink from '~/components/products/prodViewLink'
 
 	export default {
