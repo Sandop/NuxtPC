@@ -63,10 +63,10 @@
 								<p v-for="(value,key,index) in prodViewData.param" :key="index">{{key}}：{{value}}</p>
 							</div>
 						</div>
-						<!-- <div class="prod-buy-now">
-							<a href="javascript:void(0)" target="_blank" rel="nofollow">立即购买</a>
+						<div class="prod-buy-now">
+							<!-- <a href="javascript:void(0)" target="_blank" rel="nofollow">立即购买</a> -->
 							<a :href="`${prodViewData.proSrc}`" target="_blank" rel="nofollow">立即购买</a>
-						</div> -->
+						</div>
 					</div>
 				</div>
 			</div>
