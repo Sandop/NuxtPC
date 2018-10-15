@@ -11,7 +11,7 @@ const state = {
 	headNewsNav: {},
 	headJobNav: {},
 	indexLinksData: null,
-	indexShowLinks: false
+	// indexShowLinks: false
 };
 
 const mutations = {
@@ -28,9 +28,9 @@ const mutations = {
 		setIndexLinksData(state,data){
 			state.indexLinksData = data
 		},
-		setIndexShowLinks(state,bool){
-			state.indexShowLinks = bool
-		}	
+		// setIndexShowLinks(state,bool){
+		// 	state.indexShowLinks = bool
+		// }	
 };
 
 const getters = {

@@ -64,7 +64,7 @@
 									<li class="footer-nav-child-list"><nuxt-link to="/service/questions">常见问题</nuxt-link></li>
 								</ul>
 							</li>
-							<li class="footer-nav-list footer_links" v-if="indexShowLinks">
+							<li class="footer-nav-list footer_links" v-show="$route.params.tag === undefined && $route.fullPath === '/'">
 								<a href="javascript:void(0)">友情链接</a>
 								<ul class="footer-nav-child footer_links_ul">
 									<li class="footer-nav-child-list" v-for="(list,index) in indexLinksData" :key="index">
@@ -321,16 +321,16 @@
 		components: {},
 		
 		computed: {
-			...mapState(['headProdNav','headNewsNav','indexShowLinks','indexLinksData'])
+			...mapState(['headProdNav','headNewsNav','indexLinksData'])
 		},
-		mounted (){
-			//判断是否为首页，首页则改变友情链接控制字段，只在首页显示
-			let that = this
-			if(that.$route.params.tag === undefined && that.$route.fullPath === '/'){
-				that.$store.commit('setIndexShowLinks', true)
-			}else {
-				that.$store.commit('setIndexShowLinks', false)
-			}
-		}
+		// mounted (){
+		// 	//判断是否为首页，首页则改变友情链接控制字段，只在首页显示
+		// 	let that = this
+		// 	if(that.$route.params.tag === undefined && that.$route.fullPath === '/'){
+		// 		that.$store.commit('setIndexShowLinks', true)
+		// 	}else {
+		// 		that.$store.commit('setIndexShowLinks', false)
+		// 	}
+		// }
 	}
 </script>
