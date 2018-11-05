@@ -1,14 +1,7 @@
 <template>
 	<section class="container">
-			<!-- 轮播图部分开始 -->
-			<div id="common-banner">
-				<div class="common-banner-container">
-					<div class="common-banner-img">
-						<img src="~/assets/images/experice-dg/banner.png">
-					</div>
-				</div>
-			</div>
-			<!-- 轮播图部分结束 -->
+		<expericeBanner :bannerSrc="bannerSrc"></expericeBanner>
+
 			
 			<!-- Place description satrt -->
 			<div id="place_desc_wrap">
@@ -408,12 +401,15 @@
 <script>
 	import axios from 'axios'
 	import BMap from '~/components/experice/BMap.vue'
+	import expericeBanner from '~/components/experice/expericeBanner'
+
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
 
 	export default {
 		data (){
 			return {
+				bannerSrc:'http://img.visney.cn/img/nuxtPc/experice-dg/banner.png',
 				longitude: 113.639459,
 				latitude: 22.914326,
 				title: '东莞体验店',
@@ -423,6 +419,7 @@
 			}
 		},
 		components: {
+			expericeBanner,
 			BMap,
 			expericeVideo,
 			lineService
@@ -455,35 +452,7 @@
 </script>
 
 <style scoped>
-	/* banner部分 */
-	    #common-banner {
-	        position: relative;
-	        overflow: hidden;
-	        width: 100%;
-	        height: 600px;
-	    }
-
-	    .marginTop{
-	        margin-top: 173px;
-	    }
-
-	    .common-banner-container {
-	        position: relative;
-	        width: 1200px;
-	        height: 100%;
-	        margin: 0 auto;
-	    }
-
-	    .common-banner-img {
-	        position: absolute;
-	        top: 0;
-	        left: 50%;
-	        overflow: hidden;
-	        width: 1920px;
-	        height: 100%;
-	        margin-left: -960px;
-	    }
-	/* banner部分结束 */
+	
 	/*Place description satrt*/
 		div#place_desc_wrap {
 		    width: 100%;
