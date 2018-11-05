@@ -1,49 +1,7 @@
 <template>
 	<section class="container">
 		<expericeBanner :bannerSrc="bannerSrc"></expericeBanner>
-
-		<!-- Place description satrt -->
-		<div id="place_desc_wrap">
-			<div class="place_desc_box clearfix">
-				<div class="place_desc_left">
-					<div class="place_title_box">
-						<p class="place_titleC">包头</p>
-						<p class="place_titleE">Bao Tou</p>
-					</div>
-					<div class="place_desc">
-						<p class="place_descC">包头，又称鹿都，是内蒙古的制造业、工业中心及最大城市，呼包银经济带、呼包鄂城市群的中心城市，素有“草原钢城”和"稀土之都"的美誉</p>
-					</div>
-					<div class="place_descE">
-							<p>Baotou, also known as deer capital, </p>
-							<p>is the manufacturing, industrial center and largest city in Inner Mongolia.</p>
-							<p>The central city of Hubao e city group is known</p>
-							<p> as "grassland steel city" and "rare earth capital".</p>
-						</div>
-					<div class="place_tag_box">
-						<ul>
-							<li class="place_tag_list" v-for="(item,index) in placeList" :key="index" :class="{active:index == num}" @click="tabPlace(index)">{{item}}</li>
-						</ul>
-					</div>
-				</div>
-				<div class="place_desc_right">
-					<ul>
-						<li class="place_desc_img" v-show="0 == num">
-							<img src="~/assets/images/experice-bt/place_desc_right1.png" alt="">
-						</li>
-						<li class="place_desc_img" v-show="1 == num">
-							<img src="~/assets/images/experice-bt/place_desc_right2.png" alt="">
-						</li>
-						<li class="place_desc_img" v-show="2 == num">
-							<img src="~/assets/images/experice-bt/place_desc_right3.png" alt="">
-						</li>
-						<li class="place_desc_img" v-show="3 == num">
-							<img src="~/assets/images/experice-bt/place_desc_right4.png" alt="">
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- Place description end -->
+		<expericePlaceDesc :placeDescData="placeDescData"></expericePlaceDesc>
 
 		<!-- Place people description satrt -->
 		<div id="place_people_desc_wrap">
@@ -406,6 +364,7 @@
 	import axios from 'axios'
 	import BMap from '~/components/experice/BMap.vue'
 	import expericeBanner from '~/components/experice/expericeBanner'
+	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 	import expericeVideo from '~/components/experice/expericeVideo'
 	import lineService from '~/components/experice/lineService'
 
@@ -413,16 +372,30 @@
 		data (){
 			return {
 				bannerSrc:'http://img.visney.cn/img/nuxtPc/experice-bt/banner.png',
+				placeDescData: {
+					placeDescTitle: '包头',
+					placeDescTitleE: 'Bao Tou',
+					placeDesc: '包头，又称鹿都，是内蒙古的制造业、工业中心及最大城市，呼包银经济带、呼包鄂城市群的中心城市，素有“草原钢城”和"稀土之都"的美誉',
+					placeDescEn: [
+						'Baotou, also known as deer capital,',
+						'is the manufacturing, industrial center and largest city in Inner Mongolia.',
+						'The central city of Hubao e city group is known',
+						'as "grassland steel city" and "rare earth capital".'
+					],
+					placeDescImgSrc: [
+						'http://img.visney.cn/img/nuxtPc/experice-bt/place_desc_right1.png','http://img.visney.cn/img/nuxtPc/experice-bt/place_desc_right2.png','http://img.visney.cn/img/nuxtPc/experice-bt/place_desc_right3.png','http://img.visney.cn/img/nuxtPc/experice-bt/place_desc_right4.png'
+					],
+					placeDescImgName: ['希拉穆仁草原','五当召','南海公园','识食物者为俊杰']
+				},
 				longitude: 109.861421,
 				latitude: 40.651567,
 				title: '包头体验店',
-				description: '地址：包头市青山区传媒大厦B座117卫诗理包头店',
-				placeList: ['希拉穆仁草原','五当召','南海公园','识食物者为俊杰'],
-				num: 0,
+				description: '地址：包头市青山区传媒大厦B座117卫诗理包头店'
 			}
 		},
 		components: {
 			expericeBanner,
+			expericePlaceDesc,
 			BMap,
 			expericeVideo,
 			lineService
@@ -445,136 +418,13 @@
 		  return {
 		    metaData: metaData.data,
 		  } 
-		},
-		methods: {
-			tabPlace (index){
-		      this.num = index;
-		    }
 		}
 	}
 </script>
 
 <style scoped>
 
-	/*Place description satrt*/
-		div#place_desc_wrap {
-		    width: 100%;
-		    height:  auto;
-		}
 
-		.place_desc_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin: 0 auto;
-		    padding: 150px 0;
-		}
-
-		.place_desc_left {
-		    float:  left;
-		    width:  475px;
-		    height:  auto;
-		}
-
-		.place_title_box {
-		    width:  100%;
-		}
-
-		p.place_titleC {
-		    width:  100%;
-		    height:  42px;
-		    color:  #22202b;
-		    font-size:  42px;
-		    font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-		    line-height:  42px;
-		    text-align:  left;
-		}
-
-		p.place_titleE {
-		    width:  100%;
-		    height:  30px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  30px;
-		    text-align:  left;
-		}
-
-		.place_desc {
-		    width:  100%;
-		    padding:  28px 0 55px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  24px;
-		    text-align:  left;
-		}
-
-		.place_descE {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom:  82px;
-		    color:  #d6d6d6;
-		    font-size:  12px;
-		    line-height:  16px;
-		    text-align:  left;
-		}
-
-		.place_tag_box {
-		    position:  relative;
-		    width:  100%;
-		}
-
-		li.place_tag_list {
-		    overflow:  hidden;
-		    width:  113px;
-		    height:  40px;
-		    margin-bottom:  27px;
-		    border: 3px solid #000;
-		    box-sizing:  border-box;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  34px;
-		    text-align:  center;
-		    cursor: pointer;
-		    -webkit-transition: all 1s ease;
-		    -o-transition: all 1s ease;
-		    transition: all 1s ease;
-		}
-
-		.place_tag_list.active,.place_tag_list:hover{
-		    color: #feeabd;
-		    background: #000;
-		}
-
-		.place_tag_box::after {
-		    position:  absolute;
-		    top: 153px;
-		    right: -75px;
-		    content: "";
-		    width:  340px;
-		    height:  2px;
-		    background:  #d5d5d8;
-		    z-index: 22;
-		}
-
-		.place_desc_right {
-		    float:  right;
-		    overflow:  hidden;
-		    width:  520px;
-		    height: 684px;
-		}
-
-		.place_desc_img {
-		    overflow: hidden;
-		    width: 520px;
-		    height: 684px;
-		}
-
-		.place_desc_right img {
-		    width:  100%;
-		    height:  100%;
-		}
-	/*Place description satrt*/
 
 	/* Place people description satrt */
 		div#place_people_desc_wrap {
