@@ -2,38 +2,10 @@
 	<section class="container">
 		<expericeBanner :bannerSrc="bannerSrc"></expericeBanner>
 		<expericePlaceDesc :placeDescData="placeDescData"></expericePlaceDesc>
-			
-			<!-- Place people description satrt -->
-			<div id="place_people_desc_wrap">
-				<div class="place_people_desc_box clearfix">
-					<div class="place_people_desc_left">
-						<div class="place_people_desc_left_img">
-							<img src="~/assets/images/experice-cd/place_people_desc_left_img.png" alt="">
-						</div>
-						<div class="place_people_name"><p>苏轼</p></div>
-						<div class="place_people_desc">
-							<div class="place_people_descC">
-								<p>“莫听穿林打叶声，何妨吟啸且徐行。</p>
-								<p>竹杖芒鞋轻似马，谁怕？-蓑烟雨任平生”</p>
-							</div>
-						</div>
-					</div>
-					<div class="place_people_desc_right">
-						<div class="place_people_desc_right_img">
-							<img src="~/assets/images/experice-cd/place_people_desc_right_img.png" alt="">
-						</div>
-						<div class="place_people_desc_right_title">
-							<p class="place_people_desc_right_titleE">CHENGDU</p>
-							<p class="place_people_desc_right_titleC">成都卫诗理体验馆</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Place people description satrt -->
-
-			<!-- Line Service start -->
-			<lineService></lineService>
-			<!-- Line Service end -->
+		<expericePeopleDesc :peopleDescData="peopleDescData"></expericePeopleDesc>
+		<!-- Line Service start -->
+		<lineService></lineService>
+		<!-- Line Service end -->
 
 			<!-- Panoramic hall start -->
 			<div id="panoramic_hall_wrap">
@@ -385,6 +357,7 @@
 	import BMap from '~/components/experice/BMap.vue'
 	import expericeBanner from '~/components/experice/expericeBanner'
 	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
+	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
 
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
@@ -411,6 +384,18 @@
 					],
 					placeDescImgName: ['峨眉山','九寨沟','稻城亚丁','蜀绣','金沙遗址']
 				},
+				peopleDescData: {
+					peopleDescTitleCn: 'CHENGDU',
+					peopleDescTitleEn: '成都卫诗理体验馆',
+					placeImgSrc: 'http://img.visney.cn/img/nuxtPc/experice-cd/place_people_desc_right_img.png',
+					peopleName: '苏轼',
+					peopleImgSrc: 'http://img.visney.cn/img/nuxtPc/experice-cd/place_people_desc_left_img.png',
+					peopleDescCn: [
+						'“莫听穿林打叶声，何妨吟啸且徐行。',
+						'竹杖芒鞋轻似马，谁怕？一蓑烟雨任平生”'
+					],
+					peopleDescEn: []
+				},
 				longitude: 103.9864779602,
 				latitude: 30.6127248839,
 				title: '成都体验店',
@@ -420,6 +405,7 @@
 		components: {
 			expericeBanner,
 			expericePlaceDesc,
+			expericePeopleDesc,
 			BMap,
 			expericeVideo,
 			lineService
@@ -447,118 +433,6 @@
 </script>
 
 <style scoped>
-
-	/* Place people description satrt */
-		div#place_people_desc_wrap {
-		    width:  100%;
-		    background: #f9f9fa;
-		}
-
-		.place_people_desc_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding: 150px 0 145px;
-		}
-
-		.place_people_desc_left {
-		    float:  left;
-		    overflow:  hidden;
-		    width:  446px;
-		    height: auto;
-		}
-
-		.place_people_desc_left_img {
-		    overflow:  hidden;
-		    width:  100%;
-		    height: 678px;
-		}
-
-		.place_people_desc_left_img img {
-		    width:  100%;
-		    height:  100%;
-		}
-
-		.place_people_name {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  104px;
-		    margin-top:  18px;
-		    color: #22202b;
-		    font-size:  42px;
-		    font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-		    line-height:  104px;
-		    text-align:  left;
-		}
-
-		.place_people_desc {
-		    width:  100%;
-		}
-
-		.place_people_descC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  22px;
-		    text-align:  left;
-		}
-
-		.place_people_descE {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    padding-top:  8px;
-		    color:  #d6d6d6;
-		    font-size:  12px;
-		    line-height:  18px;
-		    text-align:  left;
-		}
-
-		.place_people_desc_right {
-		    float:  right;
-		    overflow:  hidden;
-		    width: 700px;
-		    text-align:  right;
-		}
-
-		.place_people_desc_right_img {
-		    overflow:  hidden;
-		    width:  700px;
-		    height:  677px;
-		}
-
-		.place_people_desc_right_title {
-		    display: inline-block;
-		    width: 230px;
-		    padding: 43px 0 44px;
-		    border-bottom: 2px solid #d5d5d8;
-		}
-
-		p.place_people_desc_right_titleE {
-		    width:  100%;
-		    height:  50px;
-		    color:  #22202b;
-		    font-size:  42px;
-		    font-weight:  bold;
-		    line-height:  50px;
-		    text-align:  right;
-		}
-
-		p.place_people_desc_right_titleC {
-		    width: 100%;
-		    height: 26px;
-		    padding-left: 25px;
-		    color: #858585;
-		    font-size: 14px;
-		    line-height: 26px;
-		    text-align: left;
-		    box-sizing: border-box;
-		}
-	/* Place people description end */
 
 	/*Panoramic hall start*/
 		div#panoramic_hall_wrap {
