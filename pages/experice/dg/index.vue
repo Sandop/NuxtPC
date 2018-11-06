@@ -1,48 +1,7 @@
 <template>
 	<section class="container">
 		<expericeBanner :bannerSrc="bannerSrc"></expericeBanner>
-
-			
-			<!-- Place description satrt -->
-			<div id="place_desc_wrap">
-				<div class="place_desc_box clearfix">
-					<div class="place_desc_left">
-						<div class="place_title_box">
-							<p class="place_titleC">东莞</p>
-							<p class="place_titleE">Dong Guan</p>
-						</div>
-						<div class="place_desc">
-							<p class="place_descC">又称“莞城“，位于珠江口东岸，广东四小虎之首。也号称“世界工厂”国际花园城市，全国文明城市广东重要的交通枢纽和外贸口岸，经济交通十分发达，更是全国4个不设县的地级市之一。</p>
-						</div>
-						<div class="place_descE">
-								<p>Also known as "Guancheng",  </p>
-		 						<p>located on the east coast of the Pearl River Estuary, </p>
-		 						<p>the first of four tigers in Guangdong. It is also known as the "world factory"</p>
-		 						<p> The International Garden City, the national civilized city,</p>
-		 						<p>Guangdong's important transport hub and foreign trade port.</p>
-							</div>
-						<div class="place_tag_box">
-							<ul>
-								<li class="place_tag_list" v-for="(item,index) in placeList" :key="index" :class="{active:index == num}" @click="tabPlace(index)">{{item}}</li>
-							</ul>
-						</div>
-					</div>
-					<div class="place_desc_right">
-						<ul>
-							<li class="place_desc_img" v-show="0 == num">
-								<img src="~/assets/images/experice-dg/place_desc_right1.png" alt="">
-							</li>
-							<li class="place_desc_img" v-show="1 == num">
-								<img src="~/assets/images/experice-dg/place_desc_right2.png" alt="">
-							</li>
-							<li class="place_desc_img" v-show="2 == num">
-								<img src="~/assets/images/experice-dg/place_desc_right3.png" alt="">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Place description end -->
+		<expericePlaceDesc :placeDescData="placeDescData"></expericePlaceDesc>
 
 			<!-- Place people description satrt -->
 			<div id="place_people_desc_wrap">
@@ -402,6 +361,7 @@
 	import axios from 'axios'
 	import BMap from '~/components/experice/BMap.vue'
 	import expericeBanner from '~/components/experice/expericeBanner'
+	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
@@ -410,16 +370,31 @@
 		data (){
 			return {
 				bannerSrc:'http://img.visney.cn/img/nuxtPc/experice-dg/banner.png',
+				placeDescData: {
+					placeDescTitle: '东莞',
+					placeDescTitleE: 'Dong Guan',
+					placeDesc: '又称“莞城“，位于珠江口东岸，广东四小虎之首。也号称“世界工厂”国际花园城市，全国文明城市广东重要的交通枢纽和外贸口岸，经济交通十分发达，更是全国4个不设县的地级市之一。',
+					placeDescEn: [
+						'Also known as "Guancheng", ',
+						'located on the east coast of the Pearl River Estuary,',
+						'the first of four tigers in Guangdong. It is also known as the "world factory"',
+						'The International Garden City, the national civilized city,',
+						"Guangdong's important transport hub and foreign trade port.",
+					],
+					placeDescImgSrc: [
+						'http://img.visney.cn/img/nuxtPc/experice-dg/place_desc_right1.png','http://img.visney.cn/img/nuxtPc/experice-dg/place_desc_right2.png','http://img.visney.cn/img/nuxtPc/experice-dg/place_desc_right3.png'
+					],
+					placeDescImgName: ['粤剧','舞狮','东莞咸面']
+				},
 				longitude: 113.639459,
 				latitude: 22.914326,
 				title: '东莞体验店',
 				description: '地址：东莞市厚街家具大道209号',
-				placeList: ['粤剧','舞狮','东莞咸面'],
-				num: 0,
 			}
 		},
 		components: {
 			expericeBanner,
+			expericePlaceDesc,
 			BMap,
 			expericeVideo,
 			lineService
@@ -442,137 +417,11 @@
 		  return {
 		    metaData: metaData.data,
 		  } 
-		},
-		methods: {
-			tabPlace (index){
-		      this.num = index;
-		    }
 		}
 	}
 </script>
 
 <style scoped>
-	
-	/*Place description satrt*/
-		div#place_desc_wrap {
-		    width: 100%;
-		    height:  auto;
-		}
-
-		.place_desc_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin: 0 auto;
-		    padding: 150px 0;
-		}
-
-		.place_desc_left {
-		    float:  left;
-		    width:  475px;
-		    height:  auto;
-		}
-
-		.place_title_box {
-		    width:  100%;
-		}
-
-		p.place_titleC {
-		    width:  100%;
-		    height:  42px;
-		    color:  #22202b;
-		    font-size:  42px;
-		    font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-		    line-height:  42px;
-		    text-align:  left;
-		}
-
-		p.place_titleE {
-		    width:  100%;
-		    height:  30px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  30px;
-		    text-align:  left;
-		}
-
-		.place_desc {
-		    width:  100%;
-		    padding:  28px 0 55px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  24px;
-		    text-align:  left;
-		}
-
-		.place_descE {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom:  82px;
-		    color:  #d6d6d6;
-		    font-size:  12px;
-		    line-height:  16px;
-		    text-align:  left;
-		}
-
-		.place_tag_box {
-		    position:  relative;
-		    width:  100%;
-		}
-
-		li.place_tag_list {
-		    overflow:  hidden;
-		    width:  113px;
-		    height:  40px;
-		    margin-bottom:  27px;
-		    border: 3px solid #000;
-		    box-sizing:  border-box;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  34px;
-		    text-align:  center;
-		    cursor: pointer;
-		    -webkit-transition: all 1s ease;
-		    -o-transition: all 1s ease;
-		    transition: all 1s ease;
-		}
-
-		.place_tag_list.active,.place_tag_list:hover{
-		    color: #feeabd;
-		    background: #000;
-		}
-
-		.place_tag_box::after {
-		    position:  absolute;
-		    top: 83px;
-		    right: -75px;
-		    content: "";
-		    width:  340px;
-		    height:  2px;
-		    background:  #d5d5d8;
-		    z-index: 22;
-		}
-
-		.place_desc_right {
-		    float:  right;
-		    overflow:  hidden;
-		    width:  520px;
-		    height: 684px;
-		}
-
-		.place_desc_right {
-		    float:  right;
-		    overflow:  hidden;
-		    width:  520px;
-		    height: 684px;
-		}
-
-		.place_desc_right img {
-		    width:  100%;
-		    height:  100%;
-		}
-	/*Place description satrt*/
 
 	/* Place people description satrt */
 		div#place_people_desc_wrap {

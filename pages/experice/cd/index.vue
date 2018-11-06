@@ -1,52 +1,8 @@
 <template>
 	<section class="container">
 		<expericeBanner :bannerSrc="bannerSrc"></expericeBanner>
+		<expericePlaceDesc :placeDescData="placeDescData"></expericePlaceDesc>
 			
-			<!-- Place description satrt -->
-			<div id="place_desc_wrap">
-				<div class="place_desc_box clearfix">
-					<div class="place_desc_left">
-						<div class="place_title_box">
-							<p class="place_titleC">成都</p>
-							<p class="place_titleE">Cheng Du</p>
-						</div>
-						<div class="place_desc">
-							<p class="place_descC">成都，四川省省会，简称“蓉”。是四川省的政治、经济和文化中心，素有“天府之国”“美食之都”的美誉</p>
-						</div>
-						<div class="place_descE">
-								<p>Chengdu, the capital of Sichuan Province, is referred to as "Rong". </p>
-		 						<p>It is the political, economic and cultural center of Sichuan province.</p>
-		 						<p>Known as "the land of abundance" and "the capital of food".</p>
-							</div>
-						<div class="place_tag_box">
-							<ul>
-								<li class="place_tag_list" v-for="(item,index) in placeList" :key="index" :class="{active:index == num}" @click="tabPlace(index)">{{item}}</li>
-							</ul>
-						</div>
-					</div>
-					<div class="place_desc_right">
-						<ul>
-							<li class="place_desc_img" v-show="0 == num">
-								<img src="~/assets/images/experice-cd/place_desc_right1.png" alt="">
-							</li>
-							<li class="place_desc_img" v-show="1 == num">
-								<img src="~/assets/images/experice-cd/place_desc_right2.png" alt="">
-							</li>
-							<li class="place_desc_img" v-show="2 == num">
-								<img src="~/assets/images/experice-cd/place_desc_right3.png" alt="">
-							</li>
-							<li class="place_desc_img" v-show="3 == num">
-								<img src="~/assets/images/experice-cd/place_desc_right4.png" alt="">
-							</li>
-							<li class="place_desc_img" v-show="4 == num">
-								<img src="~/assets/images/experice-cd/place_desc_right5.png" alt="">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Place description end -->
-
 			<!-- Place people description satrt -->
 			<div id="place_people_desc_wrap">
 				<div class="place_people_desc_box clearfix">
@@ -428,6 +384,7 @@
 	import axios from 'axios'
 	import BMap from '~/components/experice/BMap.vue'
 	import expericeBanner from '~/components/experice/expericeBanner'
+	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
@@ -436,16 +393,33 @@
 		data (){
 			return {
 				bannerSrc:'http://img.visney.cn/img/nuxtPc/experice-cd/banner.jpg',
+				placeDescData: {
+					placeDescTitle: '成都',
+					placeDescTitleE: 'Cheng Du',
+					placeDesc: '成都，四川省省会，简称“蓉”。是四川省的政治、经济和文化中心，素有“天府之国”“美食之都”的美誉',
+					placeDescEn: [
+						'Chengdu, the capital of Sichuan Province, is referred to as "Rong".',
+						'It is the political, economic and cultural center of Sichuan province.',
+						'Known as "the land of abundance" and "the capital of food".'
+					],
+					placeDescImgSrc: [
+						'http://img.visney.cn/img/nuxtPc/experice-cd/place_desc_right1.png',
+						'http://img.visney.cn/img/nuxtPc/experice-cd/place_desc_right2.png',
+						'http://img.visney.cn/img/nuxtPc/experice-cd/place_desc_right3.png',
+						'http://img.visney.cn/img/nuxtPc/experice-cd/place_desc_right4.png',
+						'http://img.visney.cn/img/nuxtPc/experice-cd/place_desc_right5.png',
+					],
+					placeDescImgName: ['峨眉山','九寨沟','稻城亚丁','蜀绣','金沙遗址']
+				},
 				longitude: 103.9864779602,
 				latitude: 30.6127248839,
 				title: '成都体验店',
 				description: '地址：成都市武侯区首信红星国际广场1号楼卫诗理家具旗舰店',
-				placeList: ['峨眉山','九寨沟','稻城亚丁','蜀绣','金沙遗址'],
-				num: 0,
 			}
 		},
 		components: {
 			expericeBanner,
+			expericePlaceDesc,
 			BMap,
 			expericeVideo,
 			lineService
@@ -468,136 +442,11 @@
 		  return {
 		    metaData: metaData.data,
 		  } 
-		},
-		methods: {
-			tabPlace (index){
-		      this.num = index;
-		    }
 		}
 	}
 </script>
 
 <style scoped>
-
-	/*Place description satrt*/
-		div#place_desc_wrap {
-		    width: 100%;
-		    height:  auto;
-		}
-
-		.place_desc_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin: 0 auto;
-		    padding: 150px 0;
-		}
-
-		.place_desc_left {
-		    float:  left;
-		    width:  475px;
-		    height:  auto;
-		}
-
-		.place_title_box {
-		    width:  100%;
-		}
-
-		p.place_titleC {
-		    width:  100%;
-		    height:  42px;
-		    color:  #22202b;
-		    font-size:  42px;
-		    font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-		    line-height:  42px;
-		    text-align:  left;
-		}
-
-		p.place_titleE {
-		    width:  100%;
-		    height:  30px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  30px;
-		    text-align:  left;
-		}
-
-		.place_desc {
-		    width:  100%;
-		    padding:  28px 0 30px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  24px;
-		    text-align:  left;
-		}
-
-		.place_descE {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom:  72px;
-		    color:  #d6d6d6;
-		    font-size:  12px;
-		    line-height:  16px;
-		    text-align:  left;
-		}
-
-		.place_tag_box {
-		    position:  relative;
-		    width:  100%;
-		}
-
-		li.place_tag_list {
-		    overflow:  hidden;
-		    width:  113px;
-		    height:  40px;
-		    margin-bottom:  27px;
-		    border: 3px solid #000;
-		    box-sizing:  border-box;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  34px;
-		    text-align:  center;
-		    cursor: pointer;
-		    -webkit-transition: all 1s ease;
-		    -o-transition: all 1s ease;
-		    transition: all 1s ease;
-		}
-
-		.place_tag_list.active,.place_tag_list:hover{
-		    color: #feeabd;
-		    background: #000;
-		}
-
-		.place_tag_box::after {
-		    position:  absolute;
-		    top: 153px;
-		    right: -75px;
-		    content: "";
-		    width:  340px;
-		    height:  2px;
-		    background:  #d5d5d8;
-		    z-index: 22;
-		}
-
-		.place_desc_right {
-		    float:  right;
-		    overflow:  hidden;
-		    width:  520px;
-		    height: 684px;
-		}
-
-		.place_desc_img {
-		    overflow: hidden;
-		    width: 520px;
-		    height: 684px;
-		}
-
-		.place_desc_right img {
-		    width:  100%;
-		    height:  100%;
-		}
-	/*Place description satrt*/
 
 	/* Place people description satrt */
 		div#place_people_desc_wrap {

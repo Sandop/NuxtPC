@@ -1,51 +1,7 @@
 <template>
 	<section class="container">
 		<expericeBanner :bannerSrc="bannerSrc"></expericeBanner>
-			
-			<!-- Place description satrt -->
-			<div id="place_desc_wrap">
-				<div class="place_desc_box clearfix">
-					<div class="place_desc_left">
-						<div class="place_title_box">
-							<p class="place_titleC">南京</p>
-							<p class="place_titleE">Nan Jing</p>
-						</div>
-						<div class="place_desc">
-							<p class="place_descC">南京，又称金陵、建康，是中国东部地区重要的中心城市。作为中华文明的重要发祥地，这座历史文化名城，如今已成为中国南方的政治，经济、文化之中心。</p>
-						</div>
-						<div class="place_descE">
-								<p>Nanjing, also known as Jinling and Jian Kang, </p>
-		 						<p>is an important central city in eastern China.</p>
-		 						<p>As an important birthplace of Chinese civilization, </p>
-		 						<p> this famous historical and cultural city,</p>
-		 						<p>Today, it has become the political, </p>
-		 						<p>economic and cultural center of southern China</p>
-							</div>
-						<div class="place_tag_box">
-							<ul>
-								<li class="place_tag_list" v-for="(item,index) in placeList" :key="index" :class="{active:index == num}" @click="tabPlace(index)">{{item}}</li>
-							</ul>
-						</div>
-					</div>
-					<div class="place_desc_right">
-						<ul>
-							<li class="place_desc_img" v-show="0 == num">
-								<img src="~/assets/images/experice-nj/place_desc_right1.png" alt="">
-							</li>
-							<li class="place_desc_img" v-show="1 == num">
-								<img src="~/assets/images/experice-nj/place_desc_right2.png" alt="">
-							</li>
-							<li class="place_desc_img" v-show="2 == num">
-								<img src="~/assets/images/experice-nj/place_desc_right3.png" alt="">
-							</li>
-							<li class="place_desc_img" v-show="3 == num">
-								<img src="~/assets/images/experice-nj/place_desc_right4.png" alt="">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Place description end -->
+		<expericePlaceDesc :placeDescData="placeDescData"></expericePlaceDesc>
 
 			<!-- Place people description satrt -->
 			<div id="place_people_desc_wrap">
@@ -453,6 +409,7 @@
 	import axios from 'axios'
 	import BMap from '~/components/experice/BMap.vue'
 	import expericeBanner from '~/components/experice/expericeBanner'
+	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
@@ -461,16 +418,32 @@
 		data (){
 			return {
 				bannerSrc:'http://img.visney.cn/img/nuxtPc/experice-nj/banner.png',
+				placeDescData: {
+					placeDescTitle: '南京',
+					placeDescTitleE: 'Nan Jing',
+					placeDesc: '南京，又称金陵、建康，是中国东部地区重要的中心城市。作为中华文明的重要发祥地，这座历史文化名城，如今已成为中国南方的政治，经济、文化之中心。',
+					placeDescEn: [
+						'Nanjing, also known as Jinling and Jian Kang, ',
+						'is an important central city in eastern China.',
+						'As an important birthplace of Chinese civilization,',
+						'this famous historical and cultural city,',
+						'Today, it has become the political,',
+						'economic and cultural center of southern China'
+					],
+					placeDescImgSrc: [
+						'http://img.visney.cn/img/nuxtPc/experice-nj/place_desc_right1.png','http://img.visney.cn/img/nuxtPc/experice-nj/place_desc_right2.png','http://img.visney.cn/img/nuxtPc/experice-nj/place_desc_right3.png','http://img.visney.cn/img/nuxtPc/experice-nj/place_desc_right4.png'
+					],
+					placeDescImgName: ['南京映像','云锦','雨花茶','盐水鸭']
+				},
 				longitude: 118.751323,
 				latitude: 32.039674,
 				title: '南京体验店',
 				description: '地址：南京市建邺区水西门大街285号289号万达金街东区',
-				placeList: ['南京映像','云锦','雨花茶','盐水鸭'],
-				num: 0,
 			}
 		},
 		components: {
 			expericeBanner,
+			expericePlaceDesc,
 			BMap,
 			expericeVideo,
 			lineService
@@ -493,137 +466,12 @@
 		  return {
 		    metaData: metaData.data,
 		  } 
-		},
-		methods: {
-			tabPlace (index){
-		      this.num = index;
-		    }
 		}
 	}
 </script>
 
 <style scoped>
 	
-	/*Place description satrt*/
-		div#place_desc_wrap {
-		    width: 100%;
-		    height:  auto;
-		}
-
-		.place_desc_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin: 0 auto;
-		    padding: 150px 0;
-		}
-
-		.place_desc_left {
-		    float:  left;
-		    width:  475px;
-		    height:  auto;
-		}
-
-		.place_title_box {
-		    width:  100%;
-		}
-
-		p.place_titleC {
-		    width:  100%;
-		    height:  42px;
-		    color:  #22202b;
-		    font-size:  42px;
-		    font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-		    line-height:  42px;
-		    text-align:  left;
-		}
-
-		p.place_titleE {
-		    width:  100%;
-		    height:  30px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  30px;
-		    text-align:  left;
-		}
-
-		.place_desc {
-		    width:  100%;
-		    padding:  28px 0 55px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  24px;
-		    text-align:  left;
-		}
-
-		.place_descE {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom:  82px;
-		    color:  #d6d6d6;
-		    font-size:  12px;
-		    line-height:  16px;
-		    text-align:  left;
-		}
-
-		.place_tag_box {
-		    position:  relative;
-		    width:  100%;
-		}
-
-		li.place_tag_list {
-		    overflow:  hidden;
-		    width:  113px;
-		    height:  40px;
-		    margin-bottom:  27px;
-		    border: 3px solid #000;
-		    box-sizing:  border-box;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  34px;
-		    text-align:  center;
-		    cursor: pointer;
-		    -webkit-transition: all 1s ease;
-		    -o-transition: all 1s ease;
-		    transition: all 1s ease;
-		}
-
-		.place_tag_list.active,.place_tag_list:hover{
-		    color: #feeabd;
-		    background: #000;
-		}
-
-		.place_tag_box::after {
-		    position:  absolute;
-		    top: 86px;
-		    right: -75px;
-		    content: "";
-		    width:  340px;
-		    height:  2px;
-		    background:  #d5d5d8;
-		    z-index: 22;
-		}
-
-		.place_desc_right {
-		    float:  right;
-		    overflow:  hidden;
-		    width:  520px;
-		    height: 684px;
-		}
-
-		.place_desc_img {
-		    overflow: hidden;
-		    width: 520px;
-		    height: 684px;
-		}
-
-		.place_desc_right img {
-		    width:  100%;
-		    height:  100%;
-		}
-	/*Place description satrt*/
-
 	/* Place people description satrt */
 		div#place_people_desc_wrap {
 		    width:  100%;
