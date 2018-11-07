@@ -6,61 +6,7 @@
 		<!-- Line Service start -->
 		<lineService></lineService>
 		<!-- Line Service end -->
-
-			<!-- Panoramic hall start -->
-			<div id="panoramic_hall_wrap">
-				<div class="panoramic_hall_box">
-					<div class="panoramic_hall_title_box">
-						<div class="panoramic_hall_titleC">
-							<h2>成都体验馆</h2>
-							<h2>唯美实景曝光</h2>
-						</div>
-						<div class="panoramic_hall_titleE">
-							<p>Panoramic hall</p>
-						</div>
-						<div class="panoramic_hall_title_desc">
-							<p>馆内产品实景展示，呈现空间艺术的美感，让生活处处皆美学</p>
-						</div>
-					</div>
-					<div class="panoramic_hall">
-						<ul>
-							<li class="panoramic_hall_list_cd">
-								<div class="panoramic_hall_list_img">
-									<img src="~/assets/images/experice-cd/panoramic_hall_list_img1.png" alt="">
-								</div>
-								<div class="panoramic_hall_list_intro_box">
-									<div class="panoramic_hall_list_title">
-										<p>致敬·先锋</p>
-									</div>
-									<div class="panoramic_hall_list_introC">
-										<p>中高端空间美学MYD设计团队匠心呈现，缔造纯正欧美贵族古典风范。</p>
-									</div>
-									<div class="panoramic_hall_list_introE">
-										<p>Professional team</p>
-									</div>
-								</div>
-							</li>
-							<li class="panoramic_hall_list_cd">
-								<div class="panoramic_hall_list_intro_box">
-									<div class="panoramic_hall_list_title">
-										<p>诚献·臻品</p>
-									</div>
-									<div class="panoramic_hall_list_introC">
-										<p>2400㎡生态生活体验馆，1135款臻尚奢品，风格涵盖现代美式、后现代美式、欧式、英式、轻奢小法、禅意中式、新古典、中式、北欧等海量精品供您臻选</p>
-									</div>
-									<div class="panoramic_hall_list_introE">
-										<p>Quality products</p>
-									</div>
-								</div>
-								<div class="panoramic_hall_list_img">
-									<img src="~/assets/images/experice-cd/panoramic_hall_list_img2.png" alt="">
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Panoramic hall end -->
+		<expericePanoramic :PanoramicData="PanoramicData"></expericePanoramic>
 
 			<!-- Native Level start -->
 			<div id="native_level_wrap">
@@ -358,6 +304,7 @@
 	import expericeBanner from '~/components/experice/expericeBanner'
 	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
+	import expericePanoramic from '~/components/experice/expericePanoramic'
 
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
@@ -396,6 +343,28 @@
 					],
 					peopleDescEn: []
 				},
+				PanoramicData: {
+					PanoramicTitleCn1: '成都体验馆',
+					PanoramicTitleCn2: '唯美实景曝光',
+					PanoramicTitleEn: 'Panoramic hall',
+					PanoramicTitleDesc: '馆内产品实景展示，呈现空间艺术的美感，让生活处处皆美学',
+					PanoramicLIWidth: 1,
+					PanoramicListData: [
+						{
+							PanoramicListTitle: '致敬·先锋',
+							PanoramicListIntro: '中高端空间美学MYD设计团队匠心呈现，缔造纯正欧美贵族古典风范。',
+							PanoramicListIntroEn: 'Professional team',
+							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-cd/panoramic_hall_list_img1.png',
+						},
+						{
+							PanoramicListTitle: '诚献·臻品',
+							PanoramicListIntro: '2400㎡生态生活体验馆，1135款臻尚奢品，风格涵盖现代美式、后现代美式、欧式、英式、轻奢小法、禅意中式、新古典、中式、北欧等海量精品供您臻选',
+							PanoramicListIntroEn: 'Quality products',
+							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-cd/panoramic_hall_list_img2.png',
+						}
+					]
+
+				},
 				longitude: 103.9864779602,
 				latitude: 30.6127248839,
 				title: '成都体验店',
@@ -406,6 +375,7 @@
 			expericeBanner,
 			expericePlaceDesc,
 			expericePeopleDesc,
+			expericePanoramic,
 			BMap,
 			expericeVideo,
 			lineService
@@ -433,127 +403,6 @@
 </script>
 
 <style scoped>
-
-	/*Panoramic hall start*/
-		div#panoramic_hall_wrap {
-		    width:  100%;
-		    background: #f9f9fa;
-		}
-
-		.panoramic_hall_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding: 150px 0 155px;
-		}
-
-		.panoramic_hall_title_box {
-		    width:  100%;
-		    padding-bottom: 115px;
-		    text-align:  center;
-		}
-
-		.panoramic_hall_titleC {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 91px;
-		}
-
-		.panoramic_hall_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 46px;
-		}
-
-		.panoramic_hall_titleE {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 34px;
-		    color: #858585;
-		    font-size: 14px;
-		    line-height: 34px;
-		    text-align: center;
-		}
-
-		.panoramic_hall_title_desc {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 68px;
-		    color: #d6d6d6;
-		    font-size: 14px;
-		    line-height: 68px;
-		    text-align: center;
-		}
-
-		.panoramic_hall {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		}
-
-		.panoramic_hall ul {
-		    overflow:  hidden;
-		    width:  100%;
-		}
-
-		li.panoramic_hall_list_cd {
-		    float:  left;
-		    overflow:  hidden;
-		    width: 525px;
-		    margin-left: 150px;
-		}
-
-		.panoramic_hall ul li:first-child {
-		    margin-left: 0px;
-		}
-
-		.panoramic_hall_list_img {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  570px;
-		}
-
-		.panoramic_hall_list_intro_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  314px;
-		    padding-top:  74px;
-		    box-sizing:  border-box;
-		}
-
-		.panoramic_hall_list_title {
-		    width:  100%;
-		    height:  30px;
-		    color:  #22202b;
-		    font-size:  18px;
-		    font-weight:  bold;
-		    line-height:  30px;
-		    text-align:  left;
-		}
-
-		.panoramic_hall_list_introC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    padding:  23px 0 32px;
-		    color:  #858585;
-		    font-size: 14px;
-		    line-height: 18px;
-		    text-align:  left;
-		}
-
-		.panoramic_hall_list_introE {
-		    overflow:  hidden;
-		    width:  100%;
-		    color:  #cccccc;
-		    font-size:  12px;
-		    line-height:  15px;
-		    text-align:  left;
-		}
-	/*Panoramic hall end*/
 
 	/*Native Level start*/
 		div#native_level_wrap {
