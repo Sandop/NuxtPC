@@ -6,81 +6,7 @@
 		<!-- Line Service start -->
 		<lineService></lineService>
 		<!-- Line Service end -->
-
-			<!-- Panoramic hall start -->
-			<div id="panoramic_hall_wrap">
-				<div class="panoramic_hall_box">
-					<div class="panoramic_hall_title_box">
-						<div class="panoramic_hall_titleC">
-							<h2>南京“卫共”店</h2>
-							<h2>唯美实景曝光</h2>
-						</div>
-						<div class="panoramic_hall_titleE">
-							<p>Panoramic hall</p>
-						</div>
-						<div class="panoramic_hall_title_desc">
-							<p>馆内产品实景展示，呈现空间艺术的美感，让生活处处皆美学</p>
-						</div>
-					</div>
-					<div class="panoramic_hall">
-						<ul>
-							<li class="panoramic_hall_list">
-								<div class="panoramic_hall_list_img">
-									<img src="~/assets/images/experice-bt/panoramic_hall_list_img1.png" alt="">
-								</div>
-								<div class="panoramic_hall_list_intro_box">
-									<div class="panoramic_hall_list_title">
-										<p>名师团队 倾力之作</p>
-									</div>
-									<div class="panoramic_hall_list_introC">
-										<p>卫诗理南京店由国内新锐空间美学家</p>
-										<p>蚂蚁嘿设计公司资深空间设计师</p>
-										<p>Presley先 生和Lavinia女士，</p>
-										<p>组建实力团队耗时3个月打造完成。</p>
-									</div>
-									<div class="panoramic_hall_list_introE">
-										<p>Online and offline service, 2688 regions, siex packs</p>
-									</div>
-								</div>
-							</li>
-							<li class="panoramic_hall_list">
-								<div class="panoramic_hall_list_intro_box">
-									<div class="panoramic_hall_list_title">
-										<p>生态生活，有温度的创造</p>
-									</div>
-									<div class="panoramic_hall_list_introC">
-										<p>大到空间布局家具陈列，小到一草一木装饰摆放，淋漓尽致地将自然生态与生活美学完美融合</p>
-									</div>
-									<div class="panoramic_hall_list_introE">
-										<p>The space layout of fumiture,small to every tree and Bush...</p>
-									</div>
-								</div>
-								<div class="panoramic_hall_list_img">
-									<img src="~/assets/images/experice-nj/panoramic_hall_list_img2.png" alt="">
-								</div>
-							</li>
-							<li class="panoramic_hall_list">
-								<div class="panoramic_hall_list_img">
-									<img src="~/assets/images/experice-nj/panoramic_hall_list_img3.png" alt="">
-								</div>
-								<div class="panoramic_hall_list_intro_box">
-									<div class="panoramic_hall_list_title">
-										<p>十六大空间设计，</p>
-										<p>还原纯正欧美贵族文化</p>
-									</div>
-									<div class="panoramic_hall_list_introC">
-										<p>金店陈列九大系列，海量臻品，风格涵盖大美、小美、简美、意式、法式、英式、新中式等... </p>
-									</div>
-									<div class="panoramic_hall_list_introE">
-										<p>The poems on Chen nine boutique style fumiture series,covering the...</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Panoramic hall end -->
+		<expericePanoramic :PanoramicData="PanoramicData"></expericePanoramic>
 
 			<!-- Native Level start -->
 			<div id="native_level_wrap">
@@ -380,6 +306,7 @@
 	import expericeBanner from '~/components/experice/expericeBanner'
 	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
+	import expericePanoramic from '~/components/experice/expericePanoramic'
 
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
@@ -419,6 +346,32 @@
 						'Nine layers of Tai, on home soil In the era of big changes, who poetry is in its new journey...'
 					]
 				},
+				PanoramicData: {
+					PanoramicTitleCn1: '南京“卫共”店',
+					PanoramicTitleCn2: '唯美实景曝光',
+					PanoramicTitleEn: 'Panoramic hall',
+					PanoramicTitleDesc: '馆内产品实景展示，呈现空间艺术的美感，让生活处处皆美学',
+					PanoramicListData: [
+						{
+							PanoramicListTitle: ['名师团队 倾力之作'],
+							PanoramicListIntro: ['卫诗理南京店由国内新锐空间美学家','蚂蚁嘿设计公司资深空间设计师','Presley先生和Lavinia女士，','组建实力团队耗时3个月打造完成。'],
+							PanoramicListIntroEn: 'Online and offline service, 2688 regions, siex packs',
+							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-bt/panoramic_hall_list_img1.png',
+						},
+						{
+							PanoramicListTitle: ['生态生活，有温度的创造'],
+							PanoramicListIntro: ['大到空间布局家具陈列，小到一草一木装饰摆放，淋漓尽致地将自然生态与生活美学完美融合'],
+							PanoramicListIntroEn: 'The space layout of fumiture,small to every tree and Bush...',
+							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-nj/panoramic_hall_list_img2.png',
+						},
+						{
+							PanoramicListTitle: ['十六大空间设计，','还原纯正欧美贵族文化'],
+							PanoramicListIntro: ['金店陈列九大系列，海量臻品，风格涵盖大美、小美、简美、意式、法式、英式、新中式等... '],
+							PanoramicListIntroEn: 'The poems on Chen nine boutique style fumiture series,covering the...',
+							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-nj/panoramic_hall_list_img3.png',
+						}
+					]
+				},
 				longitude: 118.751323,
 				latitude: 32.039674,
 				title: '南京体验店',
@@ -429,6 +382,7 @@
 			expericeBanner,
 			expericePlaceDesc,
 			expericePeopleDesc,
+			expericePanoramic,
 			BMap,
 			expericeVideo,
 			lineService
@@ -457,256 +411,6 @@
 
 <style scoped>
 	
-
-	/*Line Service start*/
-		div#line_service_wrap {
-		    width:  100%;
-		}
-
-		.line_service_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding: 150px 0;
-		}
-
-		.line_service_title_box {
-		    width:  100%;
-		    text-align:  center;
-		}
-
-		.line_service_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  91px;
-		}
-
-		.line_service_titleE {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  34px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  34px;
-		    text-align:  center;
-		}
-
-		.line_service_mid_box {
-		    width:  100%;
-		    height:  auto;
-		    padding:  85px 0 80px;
-		    text-align:  center;
-		}
-
-		.line_service_mid_img {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		}
-
-		.line_service_mid_desc {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    padding-top: 80px;
-		}
-
-		p.line_service_mid_descC {
-		    color:  #858585;
-		    font-size:  18px;
-		    line-height:  24px;
-		    text-align:  center;
-		}
-
-		p.line_service_mid_descE {
-		    color:  #d6d6d6;
-		    font-size:  14px;
-		    line-height:  34px;
-		    text-align:  center;
-		}
-
-		.line_service_process {
-		    overflow:  hidden;
-		    width:  100%;
-		}
-
-		.line_service_process ul {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    text-align:  center;
-		}
-
-		li.line_service_process_list {
-		    display:  inline-block;
-		    width:  72px;
-		    height:  auto;
-		    margin:  0 35px;
-		}
-
-		.line_service_process_list_img {
-		    width:  100%;
-		    height:  auto;
-		    text-align:  center;
-		}
-
-		.line_service_process_list {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  30px;
-		    color: #858585;
-		    font-size:  14px;
-		    line-height:  30px;
-		    text-align:  center;
-		}
-
-		.line_service_bottom {
-		    width:  100%;
-		    padding-top:  90px;
-		}
-
-		p.line_service_bottomC {
-			color:  #858585;
-			font-size: 18px;
-			line-height:  26px;
-			text-align:  center;
-		}
-
-		p.line_service_bottomE {
-		    color:  #d6d6d6;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align:  center;
-		}
-	/*Line Service end*/
-
-	/*Panoramic hall start*/
-		div#panoramic_hall_wrap {
-		    width:  100%;
-		    background: #f9f9fa;
-		}
-
-		.panoramic_hall_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding: 150px 0 155px;
-		}
-
-		.panoramic_hall_title_box {
-		    width:  100%;
-		    padding-bottom: 115px;
-		    text-align:  center;
-		}
-
-		.panoramic_hall_titleC {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 91px;
-		}
-
-		.panoramic_hall_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 46px;
-		}
-
-		.panoramic_hall_titleE {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 34px;
-		    color: #858585;
-		    font-size: 14px;
-		    line-height: 34px;
-		    text-align: center;
-		}
-
-		.panoramic_hall_title_desc {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 68px;
-		    color: #d6d6d6;
-		    font-size: 14px;
-		    line-height: 68px;
-		    text-align: center;
-		}
-
-		.panoramic_hall {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		}
-
-		.panoramic_hall ul {
-		    overflow:  hidden;
-		    width:  100%;
-		}
-
-		li.panoramic_hall_list {
-		    float:  left;
-		    overflow:  hidden;
-		    width: 300px;
-		    margin-left: 150px;
-		}
-
-		.panoramic_hall ul li:first-child {
-		    margin-left: 0px;
-		}
-
-		.panoramic_hall_list_img {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  570px;
-		}
-
-		.panoramic_hall_list_intro_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  314px;
-		    padding-top:  74px;
-		    padding-right: 50px;
-		    box-sizing:  border-box;
-		}
-
-		.panoramic_hall_list_title {
-		    width:  100%;
-		    height:  30px;
-		    color:  #22202b;
-		    font-size:  18px;
-		    font-weight:  bold;
-		    line-height:  30px;
-		    text-align:  left;
-		}
-
-		.panoramic_hall ul li:last-child .panoramic_hall_list_title {
-		    height: 60px;
-		}
-
-		.panoramic_hall_list_introC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    padding:  23px 0 32px;
-		    color:  #858585;
-		    font-size: 14px;
-		    line-height: 18px;
-		    text-align:  left;
-		}
-
-		.panoramic_hall_list_introE {
-		    overflow:  hidden;
-		    width:  100%;
-		    color:  #cccccc;
-		    font-size:  12px;
-		    line-height:  15px;
-		    text-align:  left;
-		}
-	/*Panoramic hall end*/
-
 	/*Native Level start*/
 		div#native_level_wrap {
 		    width:  100%;

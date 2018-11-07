@@ -307,20 +307,20 @@
 					PanoramicTitleDesc: '馆内产品实景展示，呈现空间艺术的美感，让生活处处皆美学',
 					PanoramicListData: [
 						{
-							PanoramicListTitle: '名师·匠造',
-							PanoramicListIntro: '国内新锐空间美学蚂蚁嘿 设计团队倾力打造，历时3个月打造奢雅纯正欧美风格墅级佳地。',
+							PanoramicListTitle: ['名师·匠造'],
+							PanoramicListIntro: ['国内新锐空间美学蚂蚁嘿 设计团队倾力打造，历时3个月打造奢雅纯正欧美风格墅级佳地。'],
 							PanoramicListIntroEn: 'The new space aesthetic design team design to build the ant hey...',
 							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-bt/panoramic_hall_list_img1.png',
 						},
 						{
-							PanoramicListTitle: '空间·美学',
-							PanoramicListIntro: '520㎡生活生态体验馆，大到空间布局家具陈列，小到一草一木装饰摆放，淋漓尽致地将自然生态与生活美学完全整合。',
+							PanoramicListTitle: ['空间·美学'],
+							PanoramicListIntro: ['520㎡生活生态体验馆，大到空间布局家具陈列，小到一草一木装饰摆放，淋漓尽致地将自然生态与生活美学完全整合。'],
 							PanoramicListIntroEn: 'The space layout of fumiture,small to every tree and Bush...',
 							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-bt/panoramic_hall_list_img2.png',
 						},
 						{
-							PanoramicListTitle: '甄品·荟萃',
-							PanoramicListIntro: '854款甄尚奢品，八大系列精品呈现，拉斐尔现代美式、麦迪逊轻奢美式、麦巴赫·纽约摩登、杜戈兰简美、格列佛简美、法式新古典、英式、新中式等海量名品供您臻选。',
+							PanoramicListTitle: ['甄品·荟萃'],
+							PanoramicListIntro: ['854款甄尚奢品，八大系列精品呈现，拉斐尔现代美式、麦迪逊轻奢美式、麦巴赫·纽约摩登、杜戈兰简美、格列佛简美、法式新古典、英式、新中式等海量名品供您臻选。'],
 							PanoramicListIntroEn: 'The poems on Chen nine boutique style fumiture series,covering the...',
 							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-bt/panoramic_hall_list_img3.png',
 						}

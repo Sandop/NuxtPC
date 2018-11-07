@@ -21,10 +21,10 @@
                         </div>
                         <div class="panoramic_hall_list_intro_box">
                             <div class="panoramic_hall_list_title">
-                                <p>{{list.PanoramicListTitle}}</p>
+                                <p v-for="(item,index) in list.PanoramicListTitle" :key="index">{{item}}</p>
                             </div>
                             <div class="panoramic_hall_list_introC">
-                                <p>{{list.PanoramicListIntro}} </p>
+                                <p v-for="(item,index) in list.PanoramicListIntro" :key="index">{{item}} </p>
                             </div>
                             <div class="panoramic_hall_list_introE">
                                 <p>{{list.PanoramicListIntroEn}}</p>
@@ -154,7 +154,6 @@
 
         .panoramic_hall_list_title {
             width:  100%;
-            height:  30px;
             color:  #22202b;
             font-size:  18px;
             font-weight:  bold;

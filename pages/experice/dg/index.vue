@@ -6,77 +6,7 @@
 		<!-- Line Service start -->
 		<lineService></lineService>
 		<!-- Line Service end -->
-
-			<!-- Panoramic hall start -->
-			<div id="panoramic_hall_wrap">
-				<div class="panoramic_hall_box">
-					<div class="panoramic_hall_title_box">
-						<div class="panoramic_hall_titleC">
-							<h2>东莞体验馆</h2>
-							<h2>唯美实景曝光</h2>
-						</div>
-						<div class="panoramic_hall_titleE">
-							<p>Panoramic hall</p>
-						</div>
-						<div class="panoramic_hall_title_desc">
-							<p>馆内产品实景展示，呈现空间艺术的美感，让生活处处皆美学</p>
-						</div>
-					</div>
-					<div class="panoramic_hall">
-						<ul>
-							<li class="panoramic_hall_list">
-								<div class="panoramic_hall_list_img">
-									<img src="~/assets/images/experice-dg/panoramic_hall_list_img1.png" alt="">
-								</div>
-								<div class="panoramic_hall_list_intro_box">
-									<div class="panoramic_hall_list_title">
-										<p>纯正欧美风，匠心设计</p>
-									</div>
-									<div class="panoramic_hall_list_introC">
-										<p>国内新锐空间美学设计团队蚂蚁嘿设计倾力打造，历时半年打造奢雅纯正欧美风格墅级佳地。</p>
-									</div>
-									<div class="panoramic_hall_list_introE">
-										<p>The new space aesthetic design team design to build the ant hey...</p>
-									</div>
-								</div>
-							</li>
-							<li class="panoramic_hall_list">
-								<div class="panoramic_hall_list_intro_box">
-									<div class="panoramic_hall_list_title">
-										<p>生态生活，有温度的创造</p>
-									</div>
-									<div class="panoramic_hall_list_introC">
-										<p>大到空间布局家具陈列，小到一草一木装饰摆放，淋漓尽致地将自然生态与生活美学完美融合</p>
-									</div>
-									<div class="panoramic_hall_list_introE">
-										<p>The space layout of fumiture,small to every tree and Bush...</p>
-									</div>
-								</div>
-								<div class="panoramic_hall_list_img">
-									<img src="~/assets/images/experice-dg/panoramic_hall_list_img2.png" alt="">
-								</div>
-							</li>
-							<li class="panoramic_hall_list">
-								<div class="panoramic_hall_list_img">
-									<img src="~/assets/images/experice-dg/panoramic_hall_list_img3.png" alt="">
-								</div>
-								<div class="panoramic_hall_list_intro_box">
-									<div class="panoramic_hall_list_title">
-										<p>十六大风格，空间美学</p>
-									</div>
-									<div class="panoramic_hall_list_introC">
-										<p>馆内陈列卫诗理九大精品系列家具，风格涵盖大美、小美、简美、英式、美式、法式、意式等各类家具，细细品味纯正欧美家具珍品。</p>
-									</div>
-									<div class="panoramic_hall_list_introE">
-										<p>The poems on Chen nine boutique style fumiture series,covering the...</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Panoramic hall end -->
+		<expericePanoramic :PanoramicData="PanoramicData"></expericePanoramic>
 
 			<!-- Native Level start -->
 			<div id="native_level_wrap">
@@ -331,6 +261,7 @@
 	import expericeBanner from '~/components/experice/expericeBanner'
 	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
+	import expericePanoramic from '~/components/experice/expericePanoramic'
 
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
@@ -370,6 +301,32 @@
 						'model, and can truly go long term.'
 					]
 				},
+				PanoramicData: {
+					PanoramicTitleCn1: '东莞体验馆',
+					PanoramicTitleCn2: '唯美实景曝光',
+					PanoramicTitleEn: 'Panoramic hall',
+					PanoramicTitleDesc: '馆内产品实景展示，呈现空间艺术的美感，让生活处处皆美学',
+					PanoramicListData: [
+						{
+							PanoramicListTitle: ['纯正欧美风，匠心设计'],
+							PanoramicListIntro: ['国内新锐空间美学设计团队蚂蚁嘿设计倾力打造，历时半年打造奢雅纯正欧美风格墅级佳地。'],
+							PanoramicListIntroEn: 'The new space aesthetic design team design to build the ant hey...',
+							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-dg/panoramic_hall_list_img1.png',
+						},
+						{
+							PanoramicListTitle: ['生态生活，有温度的创造'],
+							PanoramicListIntro: ['大到空间布局家具陈列，小到一草一木装饰摆放，淋漓尽致地将自然生态与生活美学完美融合'],
+							PanoramicListIntroEn: 'The space layout of fumiture,small to every tree and Bush...',
+							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-dg/panoramic_hall_list_img2.png',
+						},
+						{
+							PanoramicListTitle: ['十六大风格，空间美学'],
+							PanoramicListIntro: ['馆内陈列卫诗理九大精品系列家具，风格涵盖大美、小美、简美、英式、美式、法式、意式等各类家具，细细品味纯正欧美家具珍品。'],
+							PanoramicListIntroEn: 'The poems on Chen nine boutique style fumiture series,covering the...',
+							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-dg/panoramic_hall_list_img3.png',
+						}
+					]
+				},
 				longitude: 113.639459,
 				latitude: 22.914326,
 				title: '东莞体验店',
@@ -380,6 +337,7 @@
 			expericeBanner,
 			expericePlaceDesc,
 			expericePeopleDesc,
+			expericePanoramic,
 			BMap,
 			expericeVideo,
 			lineService
@@ -407,127 +365,6 @@
 </script>
 
 <style scoped>
-
-	/*Panoramic hall start*/
-		div#panoramic_hall_wrap {
-		    width:  100%;
-		    background: #f9f9fa;
-		}
-
-		.panoramic_hall_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding: 150px 0 155px;
-		}
-
-		.panoramic_hall_title_box {
-		    width:  100%;
-		    padding-bottom: 115px;
-		    text-align:  center;
-		}
-
-		.panoramic_hall_titleC {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 91px;
-		}
-
-		.panoramic_hall_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 46px;
-		}
-
-		.panoramic_hall_titleE {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 34px;
-		    color: #858585;
-		    font-size: 14px;
-		    line-height: 34px;
-		    text-align: center;
-		}
-
-		.panoramic_hall_title_desc {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 68px;
-		    color: #d6d6d6;
-		    font-size: 14px;
-		    line-height: 68px;
-		    text-align: center;
-		}
-
-		.panoramic_hall {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		}
-
-		.panoramic_hall ul {
-		    overflow:  hidden;
-		    width:  100%;
-		}
-
-		li.panoramic_hall_list {
-		    float:  left;
-		    overflow:  hidden;
-		    width: 300px;
-		    margin-left: 150px;
-		}
-
-		.panoramic_hall ul li:first-child {
-		    margin-left: 0px;
-		}
-
-		.panoramic_hall_list_img {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  570px;
-		}
-
-		.panoramic_hall_list_intro_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  314px;
-		    padding-top:  74px;
-		    box-sizing:  border-box;
-		}
-
-		.panoramic_hall_list_title {
-		    width:  100%;
-		    height:  30px;
-		    color:  #22202b;
-		    font-size:  18px;
-		    font-weight:  bold;
-		    line-height:  30px;
-		    text-align:  left;
-		}
-
-		.panoramic_hall_list_introC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    padding:  23px 0 32px;
-		    color:  #858585;
-		    font-size: 14px;
-		    line-height: 18px;
-		    text-align:  left;
-		}
-
-		.panoramic_hall_list_introE {
-		    overflow:  hidden;
-		    width:  100%;
-		    color:  #cccccc;
-		    font-size:  12px;
-		    line-height:  15px;
-		    text-align:  left;
-		}
-	/*Panoramic hall end*/
 
 	/*Native Level start*/
 		div#native_level_wrap {

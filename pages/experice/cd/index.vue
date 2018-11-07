@@ -351,14 +351,14 @@
 					PanoramicLIWidth: 1,
 					PanoramicListData: [
 						{
-							PanoramicListTitle: '致敬·先锋',
-							PanoramicListIntro: '中高端空间美学MYD设计团队匠心呈现，缔造纯正欧美贵族古典风范。',
+							PanoramicListTitle: ['致敬·先锋'],
+							PanoramicListIntro: ['中高端空间美学MYD设计团队匠心呈现，缔造纯正欧美贵族古典风范。'],
 							PanoramicListIntroEn: 'Professional team',
 							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-cd/panoramic_hall_list_img1.png',
 						},
 						{
-							PanoramicListTitle: '诚献·臻品',
-							PanoramicListIntro: '2400㎡生态生活体验馆，1135款臻尚奢品，风格涵盖现代美式、后现代美式、欧式、英式、轻奢小法、禅意中式、新古典、中式、北欧等海量精品供您臻选',
+							PanoramicListTitle: ['诚献·臻品'],
+							PanoramicListIntro: ['2400㎡生态生活体验馆，1135款臻尚奢品，风格涵盖现代美式、后现代美式、欧式、英式、轻奢小法、禅意中式、新古典、中式、北欧等海量精品供您臻选'],
 							PanoramicListIntroEn: 'Quality products',
 							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-cd/panoramic_hall_list_img2.png',
 						}
