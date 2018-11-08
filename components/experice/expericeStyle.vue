@@ -114,6 +114,10 @@
 			line-height: 42px;
 		}
 
+		.change_right .native_level_titleC h2 {
+			text-align: right;
+		}
+
 		.native_level_title_desc {
 		    width:  100%;
 		    height:  auto;
