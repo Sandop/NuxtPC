@@ -7,128 +7,11 @@
 		<lineService></lineService>
 		<!-- Line Service end -->
 		<expericePanoramic :PanoramicData="PanoramicData"></expericePanoramic>
-
-			<!-- Native Level start -->
-			<div id="native_level_wrap">
-				<div class="native_level_box">
-					<div class="native_level_title_box clearfix">
-						<div class="native_level_title_left">
-							<div class="native_level_titleC">
-								<h2>体验馆 第一层</h2>
-							</div>
-							<div class="native_level_title_desc">
-								<p>格列佛简美系列 杜兰戈简美系列 </p>
-								<p>波兰特简美系列</p>
-							</div>
-						</div>
-						<div class="native_level_title_line"></div>
-						<div class="native_level_title_right">
-							<p class="native_level_titleE">American</p>
-						</div>
-					</div>
-					<div class="native_level_show">
-						<ul>
-							<li class="native_level_list">
-								<img src="~/assets/images/experice-dg/native_level_list1.png" alt="">
-							</li>
-							<li class="native_level_list">
-								<img src="~/assets/images/experice-dg/native_level_list2.png" alt="">
-							</li>
-							<li class="native_level_list">
-								<img src="~/assets/images/experice-dg/native_level_list3.png" alt="">
-							</li>
-							<li class="native_level_list">
-								<img src="~/assets/images/experice-dg/native_level_list4.png" alt="">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Native Level end -->
-			
-			<!-- Elegant Style start -->
-			<div id="elegant_style_wrap">
-				<div class="elegant_style_box">
-					<div class="elegant_style_title_box clearfix">
-						<div class="elegant_style_title_left">
-							<div class="elegant_style_titleC">
-								<h2>体验馆 第二层</h2>
-							</div>
-							<div class="elegant_style_title_desc">
-								<p>德国馆 凯撒皇宫奢华定制意式系列</p>
-								<p>梵地亚欧式系列 赫莎</p>
-							</div>
-						</div>
-						<div class="elegant_style_title_line"></div>
-						<div class="elegant_style_title_right">
-							<p class="elegant_style_titleE">Luxury</p>
-						</div>
-					</div>
-					<div class="elegant_style_show">
-						<ul>
-							<li class="elegant_style_list">
-								<img src="~/assets/images/experice-dg/elegant_style_list1.png" alt="">
-							</li>
-							<li class="elegant_style_list">
-								<img src="~/assets/images/experice-dg/elegant_style_list2.png" alt="">
-							</li>
-							<li class="elegant_style_list">
-								<img src="~/assets/images/experice-dg/elegant_style_list3.png" alt="">
-							</li>
-							<li class="elegant_style_list">
-								<img src="~/assets/images/experice-dg/elegant_style_list4.png" alt="">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Elegant Style end -->
-
-			<!-- Chinese Style start -->
-			<div id="chinese_style_wrap">
-				<div class="chinese_style_box">
-					<div class="chinese_style_title_box clearfix">
-						<div class="chinese_style_title_left">
-							<div class="chinese_style_titleC">
-								<h2>体验馆 第三层</h2>
-							</div>
-							<div class="chinese_style_title_desc">
-								<p>比利时馆 华兹华斯新古典系列 </p>
-								<p>玛尔玛索美式系列 圣保罗美式系列</p>
-							</div>
-						</div>
-						<div class="chinese_style_title_line"></div>
-						<div class="chinese_style_title_right">
-							<p class="chinese_style_titleE">Distinguished</p>
-						</div>
-					</div>
-					<div class="chinese_style_show">
-						<ul>
-							<li class="chinese_style_list">
-								<img src="~/assets/images/experice-dg/chinese_style_list1.png" alt="">
-							</li>
-							<li class="chinese_style_list">
-								<img src="~/assets/images/experice-dg/chinese_style_list2.png" alt="">
-							</li>
-							<li class="chinese_style_list">
-								<img src="~/assets/images/experice-dg/chinese_style_list3.png" alt="">
-							</li>
-							<li class="chinese_style_list">
-								<img src="~/assets/images/experice-dg/chinese_style_list4.png" alt="">
-							</li>
-						</ul>
-					</div>
-					<div class="chinese_style_more">
-						<p>更多系列，到店尊享</p>
-					</div>
-				</div>
-			</div>
-			<!-- Chinese Style end -->
-
-			<!-- Dream Together start -->
-			<expericeVideo></expericeVideo>
-			<!-- Dream Together end -->
-			<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
+		<expericeStyle :styleData="nativeStyleData"></expericeStyle>
+		<expericeStyle :styleData="elegantStyleData"></expericeStyle>
+		<expericeStyle :styleData="chineseStyleData"></expericeStyle>
+		<expericeVideo></expericeVideo>
+		<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
 			 
 			<!-- Bao Tou Map start -->
 			<div id="place_map_wrap">
@@ -177,6 +60,7 @@
 	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
 	import expericePanoramic from '~/components/experice/expericePanoramic'
+	import expericeStyle from '~/components/experice/expericeStyle'
 	import expericeHighLights from '~/components/experice/expericeHighLights'
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
@@ -241,6 +125,46 @@
 							PanoramicListImg: 'http://img.visney.cn/img/nuxtPc/experice-dg/panoramic_hall_list_img3.png',
 						}
 					]
+				},
+				nativeStyleData: {
+					styleTitle: '体验馆 第一层',
+					styleDesc: ['格列佛简美系列 杜兰戈简美系列 ','波兰特简美系列'],
+					styleDescEn: 'American',
+					styleImg: [
+						'http://img.visney.cn/img/nuxtPc/experice-dg/native_level_list1.png',
+						'http://img.visney.cn/img/nuxtPc/experice-dg/native_level_list2.png',
+						'http://img.visney.cn/img/nuxtPc/experice-dg/native_level_list3.png',
+						'http://img.visney.cn/img/nuxtPc/experice-dg/native_level_list4.png'
+					],
+					styleMore: false,
+					changeRight: false
+
+				},
+				elegantStyleData: {
+					styleTitle: '体验馆 第二层',
+					styleDesc: ['德国馆 凯撒皇宫奢华定制意式系列','梵地亚欧式系列 赫莎'],
+					styleDescEn: 'Luxury',
+					styleImg: [
+						'http://img.visney.cn/img/nuxtPc/experice-dg/elegant_style_list1.png',
+						'http://img.visney.cn/img/nuxtPc/experice-dg/elegant_style_list2.png',
+						'http://img.visney.cn/img/nuxtPc/experice-dg/elegant_style_list3.png',
+						'http://img.visney.cn/img/nuxtPc/experice-dg/elegant_style_list4.png'
+					],
+					styleMore: false,
+					changeRight: true
+				},
+				chineseStyleData: {
+					styleTitle: '体验馆 第三层',
+					styleDesc: ['比利时馆 华兹华斯新古典系列','玛尔玛索美式系列 圣保罗美式系列'],
+					styleDescEn: 'Distinguished',
+					styleImg: [
+						'http://img.visney.cn/img/nuxtPc/experice-dg/chinese_style_list1.png',
+						'http://img.visney.cn/img/nuxtPc/experice-dg/chinese_style_list2.png',
+						'http://img.visney.cn/img/nuxtPc/experice-dg/chinese_style_list3.png',
+						'http://img.visney.cn/img/nuxtPc/experice-dg/chinese_style_list4.png'
+					],
+					styleMore: true,
+					changeRight: false
 				},
 				highLightsData: {
 					highLightsTitleCn1: '卫诗理东莞体验馆',
@@ -308,6 +232,7 @@
 			expericePlaceDesc,
 			expericePeopleDesc,
 			expericePanoramic,
+			expericeStyle,
 			expericeHighLights,
 			BMap,
 			expericeVideo,
@@ -336,285 +261,6 @@
 </script>
 
 <style scoped>
-
-	/*Native Level start*/
-		div#native_level_wrap {
-		    width:  100%;
-		}
-
-		.native_level_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding-top:  150px;
-		}
-
-		.native_level_title_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom: 60px;
-		}
-
-		.native_level_title_left {
-		    float:  left;
-		    width: 350px;
-		}
-
-		.native_level_title_line {
-		    float:  left;
-		    width:  540px;
-		    height:  2px;
-		    margin: 44px 50px 0;
-		    background:  #d5d5d8;
-		}
-
-		.native_level_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height: 42px;
-		}
-
-		.native_level_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 42px;
-		}
-
-		.native_level_title_desc {
-		    width:  100%;
-		    height:  auto;
-		    padding-top:  18px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align:  left;
-		}
-
-		.native_level_title_right {
-		    float:  right;
-		    margin-top: 30px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align:  right;
-		}
-
-		.native_level_show {
-		    width:  100%;
-		}
-
-		.native_level_show ul {
-		    overflow:  hidden;
-		}
-
-		li.native_level_list {
-		    float:  left;
-		    overflow:  hidden;
-		    width:  445px;
-		    height: 244px;
-		    margin-top: 12px;
-		    margin-left: 12px;
-		}
-
-		.native_level_show ul li:first-child {
-		    width:  743px;
-		    height:  756px;
-		    margin-left: 0;
-		}
-	/*Native Level end*/
-
-	/*Elegant Style start*/
-		div#elegant_style_wrap {
-		    width:  100%;
-		}
-
-		.elegant_style_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding-top:  150px;
-		}
-
-		.elegant_style_title_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom: 60px;
-		}
-
-		.elegant_style_title_left {
-		    float: right;
-		    width: 350px;
-		}
-
-		.elegant_style_title_line {
-		    float: right;
-		    width:  540px;
-		    height:  2px;
-		    margin: 44px 50px 0;
-		    background:  #d5d5d8;
-		}
-
-		.elegant_style_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height: 42px;
-		}
-
-		.elegant_style_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 42px;
-			text-align: right
-		}
-
-		.elegant_style_title_desc {
-		    width:  100%;
-		    height:  auto;
-		    padding-top:  18px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align: right;
-		}
-
-		.elegant_style_title_right {
-		    float: left;
-		    margin-top: 30px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align: left;
-		}
-
-		.elegant_style_show {
-		    width:  100%;
-		}
-
-		.elegant_style_show ul {
-		    overflow:  hidden;
-		}
-
-		li.elegant_style_list {
-		    float: right;
-		    overflow:  hidden;
-		    width:  445px;
-		    height: 244px;
-		    margin-top: 12px;
-		    margin-right: 12px;
-		}
-
-		.elegant_style_show ul li:first-child {
-		    width:  743px;
-		    height:  756px;
-		    margin-right: 0;
-		}
-	/*Elegant Style end*/
-
-	/*Chinese Style start*/
-		div#chinese_style_wrap {
-		    width:  100%;
-		}
-
-		.chinese_style_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding-top:  150px;
-		}
-
-		.chinese_style_title_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom: 60px;
-		}
-
-		.chinese_style_title_left {
-		    float:  left;
-		    width: 350px;
-		}
-
-		.chinese_style_title_line {
-		    float:  left;
-		    width:  540px;
-		    height:  2px;
-		    margin: 44px 50px 0;
-		    background:  #d5d5d8;
-		}
-
-		.chinese_style_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height: 41px;
-		}
-
-		.chinese_style_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 42px;
-		}
-
-		.chinese_style_title_desc {
-		    width:  100%;
-		    height:  auto;
-		    padding-top:  18px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align:  left;
-		}
-
-		.chinese_style_title_right {
-		    float:  right;
-		    margin-top: 30px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align:  right;
-		}
-
-		.chinese_style_show {
-		    width:  100%;
-		}
-
-		.chinese_style_show ul {
-		    overflow:  hidden;
-		}
-
-		li.chinese_style_list {
-		    float:  left;
-		    overflow:  hidden;
-		    width:  445px;
-		    height: 244px;
-		    margin-top: 12px;
-		    margin-left: 12px;
-		}
-
-		.chinese_style_show ul li:first-child {
-		    width:  743px;
-		    height:  756px;
-		    margin-left: 0;
-		}
-
-		.chinese_style_more {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  150px;
-		    color: #22202b;
-		    font-size:  24px;
-		    font-weight:  bold;
-		    line-height: 120px;
-		    text-align:  center;
-		}
-	/*Chinese Style end*/
 
 	/* Bao Tou Map start */
 		#place_map_wrap {
