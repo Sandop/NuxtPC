@@ -128,92 +128,7 @@
 			<!-- Dream Together start -->
 			<expericeVideo></expericeVideo>
 			<!-- Dream Together end -->
-			
-			<!-- High Lights start -->
-			<div id="high_lights_wrap">
-				<div class="high_lights_box">
-					<div class="high_lights_title_box">
-						<div class="high_lights_titleC">
-							<h2>卫诗理东莞体验馆</h2>
-							<h2>六大专属亮点</h2>
-						</div>
-						<div class="high_lights_titleE">
-							<p>Olivelife</p>
-						</div>
-					</div>
-					<div class="high_lights">
-						<ul>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">01</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">欧式软装</p>
-									<p class="high_lights_list_titleE">European style curtains</p>
-								</div>
-								<div class="high_lights_list_desc">纯正欧式软装设计打造复古时尚风</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-dg/high_lights_list_img1.png" alt="欧式软装">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">02</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">时装专区</p>
-									<p class="high_lights_list_titleE">Fashion zone</p>
-								</div>
-								<div class="high_lights_list_desc">供选国际大牌高定时装，品味流行时尚</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-dg/high_lights_list_img2.png" alt="时装专区">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">03</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">特配香薰</p>
-									<p class="high_lights_list_titleE">Special match</p>
-								</div>
-								<div class="high_lights_list_desc">法国南部香水之都格拉斯特配香薰</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-bt/high_lights_list_img3.png" alt="安神香薰">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">04</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">免费餐饮</p>
-									<p class="high_lights_list_titleE">Especially with the dining</p>
-								</div>
-								<div class="high_lights_list_desc">粤菜泰斗大师传人黄学文掌勺烹饪美味菜肴</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-dg/high_lights_list_img4.png" alt="欧奢软装">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">05</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">茶香品茗</p>
-									<p class="high_lights_list_titleE">Tea</p>
-								</div>
-								<div class="high_lights_list_desc">长寿乡水源烹煮，茶香扑鼻</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-dg/high_lights_list_img5.png" alt="免费接送">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">06</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">专属伴手礼</p>
-									<p class="high_lights_list_titleE">Gift</p>
-								</div>
-								<div class="high_lights_list_desc">为每一位卫诗理客户专属定制伴手礼，献给尊贵的您</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-dg/high_lights_list_img6.png" alt="精致伴手礼">
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- High Lights end -->
+			<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
 			 
 			<!-- Bao Tou Map start -->
 			<div id="place_map_wrap">
@@ -262,7 +177,7 @@
 	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
 	import expericePanoramic from '~/components/experice/expericePanoramic'
-
+	import expericeHighLights from '~/components/experice/expericeHighLights'
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
 
@@ -327,6 +242,61 @@
 						}
 					]
 				},
+				highLightsData: {
+					highLightsTitleCn1: '卫诗理东莞体验馆',
+					highLightsTitleCn2: '六大专属亮点',
+					highLightsTitleEn: 'Olivelife',
+					highLightsList: [
+						{
+							highLightsListNum: '01',
+							highLightsListTitle: '欧式软装',
+							highLightsListTitleEn: 'European style curtains',
+							highLightsListDesc: '纯正欧式软装设计打造复古时尚风',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-dg/high_lights_list_img1.png',
+							highLightsListImgAlt: '欧式软装'
+						},
+						{
+							highLightsListNum: '02',
+							highLightsListTitle: '时装专区',
+							highLightsListTitleEn: 'Fashion zone',
+							highLightsListDesc: '供选国际大牌高定时装，品味流行时尚',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-dg/high_lights_list_img2.png',
+							highLightsListImgAlt: '时装专区'
+						},
+						{
+							highLightsListNum: '03',
+							highLightsListTitle: '安神香薰',
+							highLightsListTitleEn: 'Nerves aromatherapy',
+							highLightsListDesc: '法国南部香水之都格拉斯特配香薰',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-bt/high_lights_list_img3.png',
+							highLightsListImgAlt: '安神香薰'
+						},
+						{
+							highLightsListNum: '04',
+							highLightsListTitle: '免费餐饮',
+							highLightsListTitleEn: 'Especially with the dining',
+							highLightsListDesc: '粤菜泰斗大师传人黄学文掌勺烹饪美味菜肴',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-dg/high_lights_list_img4.png',
+							highLightsListImgAlt: '免费餐饮'
+						},
+						{
+							highLightsListNum: '05',
+							highLightsListTitle: '茶香品茗',
+							highLightsListTitleEn: 'Tea',
+							highLightsListDesc: '长寿乡水源烹煮，茶香扑鼻',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-dg/high_lights_list_img5.png',
+							highLightsListImgAlt: '茶香品茗'
+						},
+						{
+							highLightsListNum: '06',
+							highLightsListTitle: '专属伴手礼',
+							highLightsListTitleEn: 'Gift',
+							highLightsListDesc: '为每一位卫诗理客户专属定制伴手礼，献给尊贵的您',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-dg/high_lights_list_img6.png',
+							highLightsListImgAlt: '专属伴手礼'
+						}
+					]
+				},
 				longitude: 113.639459,
 				latitude: 22.914326,
 				title: '东莞体验店',
@@ -338,6 +308,7 @@
 			expericePlaceDesc,
 			expericePeopleDesc,
 			expericePanoramic,
+			expericeHighLights,
 			BMap,
 			expericeVideo,
 			lineService
@@ -644,125 +615,6 @@
 		    text-align:  center;
 		}
 	/*Chinese Style end*/
-
-	/*High Lights start*/
-		div#high_lights_wrap {
-		    width:  100%;
-		    background:  #fff;
-		}
-
-		.high_lights_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    margin:  0 auto;
-		    padding: 150px 0;
-		}
-
-		.high_lights_title_box {
-		    width:  100%;
-		    padding-bottom: 67px;
-		    text-align:  center;
-		}
-
-		.high_lights_titleC {
-		    overflow:  hidden;
-		    height:  92px;
-		}
-
-		.high_lights_titleC h2 {
-			font-size:  42px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 46px;
-		}
-
-		.high_lights_titleE {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  28px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  28px;
-		    text-align:  center;
-		}
-
-		.high_lights {
-		    width:  100%;
-		}
-
-		.high_lights ul {
-		    overflow:  hidden;
-		}
-
-		li.high_lights_list {
-		    float:  left;
-		    overflow:  hidden;
-		    width: 400px;
-		    height:  660px;
-		    padding-top: 86px;
-		    text-align:  center;
-		    box-sizing:  border-box;
-		}
-
-		.high_lights_list_num {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  80px;
-		    color:  #22202b;
-		    font-size:  60px;
-		    font-weight: bold;
-		    line-height:  80px;
-		    text-align:  center;
-		}
-
-		.high_lights_list_title {
-		    width:  100%;
-		}
-
-		p.high_lights_list_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  30px;
-		    color:  #22202b;
-		    font-size:  22px;
-		    font-weight:  bold;
-		    line-height:  30px;
-		    text-align:  center;
-		}
-
-		p.high_lights_list_titleE {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 20px;
-		    color: #858585;
-		    font-size: 12px;
-		    line-height: 20px;
-		    text-align: center;
-		}
-
-		.high_lights_list_desc {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 44px;
-		    color: #858585;
-		    font-size: 14px;
-		    line-height: 44px;
-		    text-align: center;
-		}
-
-		.high_lights_list_img {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  350px;
-		    margin-top: 50px;
-		}
-
-		.high_lights_list_img img {
-		    width:  100%;
-		    height:  100%;
-		}
-	/*High Lights end*/
 
 	/* Bao Tou Map start */
 		#place_map_wrap {
