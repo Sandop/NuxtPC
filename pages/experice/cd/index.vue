@@ -3,17 +3,13 @@
 		<expericeBanner :bannerSrc="bannerSrc"></expericeBanner>
 		<expericePlaceDesc :placeDescData="placeDescData"></expericePlaceDesc>
 		<expericePeopleDesc :peopleDescData="peopleDescData"></expericePeopleDesc>
-		<!-- Line Service start -->
 		<lineService></lineService>
-		<!-- Line Service end -->
 		<expericePanoramic :PanoramicData="PanoramicData"></expericePanoramic>
 		<expericeStyle :styleData="nativeStyleData"></expericeStyle>
 		<expericeStyle :styleData="elegantStyleData"></expericeStyle>
 		<expericeStyle :styleData="chineseStyleData"></expericeStyle>
 		<expericeStyle :styleData="naturalStyleData"></expericeStyle>
-		<!-- Dream Together start -->
 		<expericeVideo></expericeVideo>
-		<!-- Dream Together end -->
 		<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
 			
 			

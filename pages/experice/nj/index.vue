@@ -3,9 +3,7 @@
 		<expericeBanner :bannerSrc="bannerSrc"></expericeBanner>
 		<expericePlaceDesc :placeDescData="placeDescData"></expericePlaceDesc>
 		<expericePeopleDesc :peopleDescData="peopleDescData"></expericePeopleDesc>
-		<!-- Line Service start -->
 		<lineService></lineService>
-		<!-- Line Service end -->
 		<expericePanoramic :PanoramicData="PanoramicData"></expericePanoramic>
 
 			<!-- Native Level start -->
@@ -169,9 +167,7 @@
 			</div>
 			<!-- Natural Style end -->
 
-			<!-- Dream Together start -->
 			<expericeVideo></expericeVideo>
-			<!-- Dream Together end -->
 			
 			<!-- High Lights start -->
 			<div id="high_lights_wrap">
