@@ -10,92 +10,7 @@
 		<expericeStyle :styleData="chineseStyleData"></expericeStyle>
 		<expericeStyle :styleData="naturalStyleData"></expericeStyle>
 		<expericeVideo></expericeVideo>
-		
-			<!-- High Lights start -->
-			<div id="high_lights_wrap">
-				<div class="high_lights_box">
-					<div class="high_lights_title_box">
-						<div class="high_lights_titleC">
-							<h2>卫诗理南京“卫共”店</h2>
-							<h2>六大专属亮点</h2>
-						</div>
-						<div class="high_lights_titleE">
-							<p>Olivelife</p>
-						</div>
-					</div>
-					<div class="high_lights">
-						<ul>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">01</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">匠心设计</p>
-									<p class="high_lights_list_titleE">European style curtains</p>
-								</div>
-								<div class="high_lights_list_desc">奢华热带雨淋设计书写生活的诗意</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-nj/high_lights_list_img1.png" alt="匠心设计">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">02</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">0元飞线下</p>
-									<p class="high_lights_list_titleE">Free ticket</p>
-								</div>
-								<div class="high_lights_list_desc">报销单人往返机票或高铁票（订单总额满20W）</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-nj/high_lights_list_img2.png" alt="0元飞线下">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">03</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">特配香薰</p>
-									<p class="high_lights_list_titleE">Special match</p>
-								</div>
-								<div class="high_lights_list_desc">法国南部香水之都格拉斯特配香薰</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-bt/high_lights_list_img3.png" alt="安神香薰">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">04</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">免费餐饮</p>
-									<p class="high_lights_list_titleE">Free meals</p>
-								</div>
-								<div class="high_lights_list_desc">大厨掌勺烹饪南京特色美味菜肴</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-nj/high_lights_list_img4.png" alt="免费餐饮">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">05</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">免费接送</p>
-									<p class="high_lights_list_titleE">Free Shuttle</p>
-								</div>
-								<div class="high_lights_list_desc">在线预约，尊享高铁站、机场专人专车服务</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-bt/high_lights_list_img5.png" alt="免费接送">
-								</div>
-							</li>
-							<li class="high_lights_list">
-								<div class="high_lights_list_num">06</div>
-								<div class="high_lights_list_title">
-									<p class="high_lights_list_titleC">专属伴手礼</p>
-									<p class="high_lights_list_titleE">Gift</p>
-								</div>
-								<div class="high_lights_list_desc">专属定制伴手礼献给尊贵来宾</div>
-								<div class="high_lights_list_img">
-									<img src="~/assets/images/experice-nj/high_lights_list_img6.png" alt="专属伴手礼">
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- High Lights end -->
+		<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
 			 
 			<!-- Bao Tou Map start -->
 			<div id="place_map_wrap">
@@ -146,7 +61,8 @@
 	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
 	import expericePanoramic from '~/components/experice/expericePanoramic'
 	import expericeStyle from '~/components/experice/expericeStyle'
-	import expericeVideo from '~/components/experice/expericeVideo.vue'
+	import expericeVideo from '~/components/experice/expericeVideo'
+	import expericeHighLights from '~/components/experice/expericeHighLights'
 	import lineService from '~/components/experice/lineService.vue'
 
 	export default {
@@ -263,6 +179,61 @@
 					styleMore: true,
 					changeRight: true
 				},
+				highLightsData: {
+					highLightsTitleCn1: '卫诗理南京“卫共”店',
+					highLightsTitleCn2: '六大专属亮点',
+					highLightsTitleEn: 'Olivelife',
+					highLightsList: [
+						{
+							highLightsListNum: '01',
+							highLightsListTitle: '匠心设计',
+							highLightsListTitleEn: 'European style curtains',
+							highLightsListDesc: '纯真欧美软装搭配，回溯一个时代的繁华',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-nj/high_lights_list_img1.png',
+							highLightsListImgAlt: '匠心设计'
+						},
+						{
+							highLightsListNum: '02',
+							highLightsListTitle: '0元飞线下',
+							highLightsListTitleEn: 'Free ticket',
+							highLightsListDesc: '报销单人往返机票或高铁票（订单总额满20W）',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-nj/high_lights_list_img2.png',
+							highLightsListImgAlt: '0元飞线下'
+						},
+						{
+							highLightsListNum: '03',
+							highLightsListTitle: '特配香薰',
+							highLightsListTitleEn: 'Special match',
+							highLightsListDesc: '法国南部香水之都格拉斯特配香薰',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-bt/high_lights_list_img3.png',
+							highLightsListImgAlt: '特配香薰'
+						},
+						{
+							highLightsListNum: '04',
+							highLightsListTitle: '免费餐饮',
+							highLightsListTitleEn: 'Free meals',
+							highLightsListDesc: '大厨掌勺烹饪南京特色美味菜肴',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-nj/high_lights_list_img4.png',
+							highLightsListImgAlt: '免费餐饮'
+						},
+						{
+							highLightsListNum: '05',
+							highLightsListTitle: '免费接送',
+							highLightsListTitleEn: 'Free Shuttle',
+							highLightsListDesc: '在线预约，尊享高铁站、机场专人专车服务',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-bt/high_lights_list_img5.png',
+							highLightsListImgAlt: '免费接送'
+						},
+						{
+							highLightsListNum: '06',
+							highLightsListTitle: '专属伴手礼',
+							highLightsListTitleEn: 'Gift',
+							highLightsListDesc: '专属定制伴手礼献给尊贵来宾',
+							highLightsListImg: 'http://img.visney.cn/img/nuxtPc/experice-nj/high_lights_list_img6.png',
+							highLightsListImgAlt: '专属伴手礼'
+						}
+					]
+				},
 				longitude: 118.751323,
 				latitude: 32.039674,
 				title: '南京体验店',
@@ -275,6 +246,7 @@
 			expericePeopleDesc,
 			expericePanoramic,
 			expericeStyle,
+			expericeHighLights,
 			BMap,
 			expericeVideo,
 			lineService
@@ -302,493 +274,6 @@
 </script>
 
 <style scoped>
-	
-	/*Native Level start*/
-		div#native_level_wrap {
-		    width:  100%;
-		}
-
-		.native_level_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding-top:  150px;
-		}
-
-		.native_level_title_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom: 60px;
-		}
-
-		.native_level_title_left {
-		    float:  left;
-		    width: 350px;
-		}
-
-		.native_level_title_line {
-		    float:  left;
-		    width:  540px;
-		    height:  2px;
-		    margin: 70px 50px 0;
-		    background:  #d5d5d8;
-		}
-
-		.native_level_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height: 84px;
-		}
-
-		.native_level_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 42px;
-		}
-
-		.native_level_title_desc {
-		    width:  100%;
-		    height:  auto;
-		    padding-top:  18px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align:  left;
-		}
-
-		.native_level_title_right {
-		    float:  right;
-		    margin-top: 60px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align:  right;
-		}
-
-		.native_level_show {
-		    width:  100%;
-		}
-
-		.native_level_show ul {
-		    overflow:  hidden;
-		}
-
-		li.native_level_list {
-		    float:  left;
-		    overflow:  hidden;
-		    width:  445px;
-		    height: 244px;
-		    margin-top: 12px;
-		    margin-left: 12px;
-		}
-
-		.native_level_show ul li:first-child {
-		    width:  743px;
-		    height:  756px;
-		    margin-left: 0;
-		}
-	/*Native Level end*/
-
-	/*Elegant Style start*/
-		div#elegant_style_wrap {
-		    width:  100%;
-		}
-
-		.elegant_style_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding-top:  150px;
-		}
-
-		.elegant_style_title_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom: 60px;
-		}
-
-		.elegant_style_title_left {
-		    float: right;
-		    width: 350px;
-		}
-
-		.elegant_style_title_line {
-		    float: right;
-		    width:  540px;
-		    height:  2px;
-		    margin: 70px 50px 0;
-		    background:  #d5d5d8;
-		}
-
-		.elegant_style_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		    text-align: right;
-		}
-
-		.elegant_style_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 42px;
-		}
-
-		.elegant_style_title_desc {
-		    width:  100%;
-		    height:  auto;
-		    padding-top:  18px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align: right;
-		}
-
-		.elegant_style_title_right {
-		    float: left;
-		    margin-top: 60px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align: left;
-		}
-
-		.elegant_style_show {
-		    width:  100%;
-		}
-
-		.elegant_style_show ul {
-		    overflow:  hidden;
-		}
-
-		li.elegant_style_list {
-		    float: right;
-		    overflow:  hidden;
-		    width:  445px;
-		    height: 244px;
-		    margin-top: 12px;
-		    margin-right: 12px;
-		}
-
-		.elegant_style_show ul li:first-child {
-		    width:  743px;
-		    height:  756px;
-		    margin-right: 0;
-		}
-	/*Elegant Style end*/
-
-	/*Chinese Style start*/
-		div#chinese_style_wrap {
-		    width:  100%;
-		}
-
-		.chinese_style_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding-top:  150px;
-		}
-
-		.chinese_style_title_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom: 60px;
-		}
-
-		.chinese_style_title_left {
-		    float:  left;
-		    width: 350px;
-		}
-
-		.chinese_style_title_line {
-		    float:  left;
-		    width:  540px;
-		    height:  2px;
-		    margin: 70px 50px 0;
-		    background:  #d5d5d8;
-		}
-
-		.chinese_style_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		}
-
-		.chinese_style_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 42px;
-		}
-
-		.chinese_style_title_desc {
-		    width:  100%;
-		    height:  auto;
-		    padding-top:  18px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align:  left;
-		}
-
-		.chinese_style_title_right {
-		    float:  right;
-		    margin-top: 60px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align:  right;
-		}
-
-		.chinese_style_show {
-		    width:  100%;
-		}
-
-		.chinese_style_show ul {
-		    overflow:  hidden;
-		}
-
-		li.chinese_style_list {
-		    float:  left;
-		    overflow:  hidden;
-		    width:  445px;
-		    height: 244px;
-		    margin-top: 12px;
-		    margin-left: 12px;
-		}
-
-		.chinese_style_show ul li:first-child {
-		    width:  743px;
-		    height:  756px;
-		    margin-left: 0;
-		}
-
-	/*Chinese Style end*/
-
-	/*Natural Style start*/
-		div#natural_style_wrap {
-		    width:  100%;
-		}
-
-		.natural_style_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding-top:  150px;
-		}
-
-		.natural_style_title_box {
-		    overflow:  hidden;
-		    width:  100%;
-		    padding-bottom: 60px;
-		}
-
-		.natural_style_title_left {
-		    float: right;
-		    width: 350px;
-		}
-
-		.natural_style_title_line {
-		    float: right;
-		    width:  540px;
-		    height:  2px;
-		    margin: 70px 50px 0;
-		    background:  #d5d5d8;
-		}
-
-		.natural_style_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		    text-align: right;
-		}
-
-		.natural_style_titleC h2 {
-			font-size:  40px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 42px;
-		}
-
-		.natural_style_title_desc {
-		    width:  100%;
-		    height:  auto;
-		    padding-top:  18px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align: right;
-		}
-
-		.natural_style_title_right {
-		    float: left;
-		    margin-top: 60px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  20px;
-		    text-align: left;
-		}
-
-		.natural_style_show {
-		    width:  100%;
-		}
-
-		.natural_style_show ul {
-		    overflow:  hidden;
-		}
-
-		li.natural_style_list {
-		    float: right;
-		    overflow:  hidden;
-		    width:  445px;
-		    height: 244px;
-		    margin-top: 12px;
-		    margin-right: 12px;
-		}
-
-		.natural_style_show ul li:first-child {
-		    width:  743px;
-		    height:  756px;
-		    margin-right: 0;
-		}
-
-		.natural_style_more {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  174px;
-		    color: #22202b;
-		    font-size:  24px;
-		    font-weight:  bold;
-		    line-height: 174px;
-		    text-align:  center;
-		}
-	/*Natural Style end*/
-
-	/*High Lights start*/
-		div#high_lights_wrap {
-		    width:  100%;
-		    background:  #fff;
-		}
-
-		.high_lights_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    margin:  0 auto;
-		    padding: 150px 0;
-		}
-
-		.high_lights_title_box {
-		    width:  100%;
-		    padding-bottom: 67px;
-		    text-align:  center;
-		}
-
-		.high_lights_titleC {
-		    overflow:  hidden;
-		    height:  92px;
-		}
-
-		.high_lights_titleC h2 {
-			font-size:  42px;
-			font-family: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc','STZhongsong','宋体', 'serif';
-			font-weight: 900;
-			color: #22202b;
-			line-height: 46px;
-		}
-
-		.high_lights_titleE {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  28px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  28px;
-		    text-align:  center;
-		}
-
-		.high_lights {
-		    width:  100%;
-		}
-
-		.high_lights ul {
-		    overflow:  hidden;
-		}
-
-		li.high_lights_list {
-		    float:  left;
-		    overflow:  hidden;
-		    width: 400px;
-		    height:  660px;
-		    padding-top: 86px;
-		    text-align:  center;
-		    box-sizing:  border-box;
-		}
-
-		.high_lights_list_num {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  80px;
-		    color:  #22202b;
-		    font-size:  60px;
-		    font-weight: bold;
-		    line-height:  80px;
-		    text-align:  center;
-		}
-
-		.high_lights_list_title {
-		    width:  100%;
-		}
-
-		p.high_lights_list_titleC {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  30px;
-		    color:  #22202b;
-		    font-size:  22px;
-		    font-weight:  bold;
-		    line-height:  30px;
-		    text-align:  center;
-		}
-
-		p.high_lights_list_titleE {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 20px;
-		    color: #858585;
-		    font-size: 12px;
-		    line-height: 20px;
-		    text-align: center;
-		}
-
-		.high_lights_list_desc {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 44px;
-		    color: #858585;
-		    font-size: 14px;
-		    line-height: 44px;
-		    text-align: center;
-		}
-
-		.high_lights_list_img {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  350px;
-		    margin-top: 50px;
-		}
-
-		.high_lights_list_img img {
-		    width:  100%;
-		    height:  100%;
-		}
-	/*High Lights end*/
-
 	/* Bao Tou Map start */
 		#place_map_wrap {
 		  width: 100%;
