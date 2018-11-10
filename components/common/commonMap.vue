@@ -2,8 +2,6 @@
     <div id="place_map_wrap">
         <div class="place_map_box">
             <div id="place_map">
-                <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB"></script>
-                <!-- <BMap :longitude="longitude" :latitude="latitude" :title="title" :description="description"></BMap> -->
                 <div id="allmap" :style="mapStyle"></div>
             </div>
         </div>
@@ -76,7 +74,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     #place_map_wrap {
         width: 100%;
     }
@@ -91,5 +89,8 @@
         overflow: hidden;
         width:  100%;
         height:  100%;
+    }
+    .anchorBL, .BMap_cpyCtrl.BMap_noprint.anchorBL{
+        display: none !important;
     }
 </style>

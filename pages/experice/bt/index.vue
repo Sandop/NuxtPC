@@ -50,12 +50,12 @@
 	import expericeBanner from '~/components/experice/expericeBanner'
 	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
+	import lineService from '~/components/experice/lineService'
 	import expericePanoramic from '~/components/experice/expericePanoramic'
 	import expericeStyle from '~/components/experice/expericeStyle'
 	import expericeVideo from '~/components/experice/expericeVideo'
 	import expericeHighLights from '~/components/experice/expericeHighLights'
 	import commonMap from '~/components/common/commonMap'
-	import lineService from '~/components/experice/lineService'
 
 	export default {
 		data (){
