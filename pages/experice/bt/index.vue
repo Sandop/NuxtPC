@@ -10,17 +10,7 @@
 		<expericeStyle :styleData="chineseStyleData"></expericeStyle>
 		<expericeVideo></expericeVideo>
 		<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
-			
-		<!-- Bao Tou Map start -->
-		<div id="place_map_wrap">
-			<div class="place_map_box">
-				<div id="place_map">
-					<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB"></script>
-					<BMap :longitude="longitude" :latitude="latitude" :title="title" :description="description"></BMap>
-				</div>
-			</div>
-		</div>
-		<!-- Bao Tou Map end -->
+		<commonMap :mapData="mapData"></commonMap>	
 		
 		<!-- Place Address start -->
 		<div id="place_address_wrap">
@@ -57,7 +47,6 @@
 
 <script>
 	import axios from 'axios'
-	import BMap from '~/components/experice/BMap.vue'
 	import expericeBanner from '~/components/experice/expericeBanner'
 	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
@@ -65,6 +54,7 @@
 	import expericeStyle from '~/components/experice/expericeStyle'
 	import expericeVideo from '~/components/experice/expericeVideo'
 	import expericeHighLights from '~/components/experice/expericeHighLights'
+	import commonMap from '~/components/common/commonMap'
 	import lineService from '~/components/experice/lineService'
 
 	export default {
@@ -219,10 +209,12 @@
 						}
 					]
 				},
-				longitude: 109.861421,
-				latitude: 40.651567,
-				title: '包头体验店',
-				description: '地址：包头市青山区传媒大厦B座117卫诗理包头店'
+				mapData: {
+					longitude: 109.861421,
+					latitude: 40.651567,
+					title: '包头体验店',
+					description: '地址：包头市青山区传媒大厦B座117卫诗理包头店'
+				}
 			}
 		},
 		components: {
@@ -232,55 +224,33 @@
 			expericePanoramic,
 			expericeHighLights,
 			expericeStyle,
-			BMap,
+			commonMap,
 			expericeVideo,
 			lineService
 		},
 		head () {
-		  return {
-		    title:this.metaData.navigationTitle,
-		    meta: [
-		      {name:'keywords',hid: 'keywords',content:`${this.metaData.navigationKeyword}`},
-		      {name:'description',hid:'description',content:`${this.metaData.navigationDescription}`}
-		    ],
-			script: [
-				{src:'http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB'}
-			]
-		  }
+			return {
+				title:this.metaData.navigationTitle,
+				meta: [
+				{name:'keywords',hid: 'keywords',content:`${this.metaData.navigationKeyword}`},
+				{name:'description',hid:'description',content:`${this.metaData.navigationDescription}`}
+				],
+				script: [
+					{src:'http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB'}
+				]
+			}
 		},
 		async asyncData({params,store}){
-		  //head信息
-		    let metaData = await axios(`${store.state.wordpressAPI}/NavigationMeta/get/20`);
-		  return {
-		    metaData: metaData.data,
-		  } 
+			//head信息
+				let metaData = await axios(`${store.state.wordpressAPI}/NavigationMeta/get/20`);
+			return {
+				metaData: metaData.data,
+			} 
 		}
 	}
 </script>
 
 <style scoped>
-
-	
-
-	/* Bao Tou Map start */
-		#place_map_wrap {
-		  width: 100%;
-		}
-		.place_map_box {
-		  overflow: hidden;
-		  width: 100%;
-		  height: 600px;
-		  margin: 0 auto;
-		}
-
-		div#place_map {
-			overflow: hidden;
-		    width:  100%;
-		    height:  100%;
-		}
-
-		
-	/* Bao Tou Map end */
 
 	/*Place Address start*/
 		div#place_address_wrap {
