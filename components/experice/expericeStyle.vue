@@ -4,7 +4,7 @@
             <div class="native_level_title_box clearfix" :class="{change_right:styleData.changeRight}">
                 <div class="native_level_title_left">
                     <div class="native_level_titleC">
-                        <h2>{{styleData.styleTitle}}</h2>
+                        <h2 v-for="(list,index) in styleData.styleTitle" :key="index">{{list}}</h2>
                     </div>
                     <div class="native_level_title_desc">
                         <p v-for="(list,index) in styleData.styleDesc" :key="index">{{list}}</p>
@@ -103,7 +103,6 @@
 		.native_level_titleC {
 		    overflow:  hidden;
 		    width:  100%;
-		    height: 42px;
 		}
 
 		.native_level_titleC h2 {

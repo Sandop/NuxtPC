@@ -5,170 +5,12 @@
 		<expericePeopleDesc :peopleDescData="peopleDescData"></expericePeopleDesc>
 		<lineService></lineService>
 		<expericePanoramic :PanoramicData="PanoramicData"></expericePanoramic>
-
-			<!-- Native Level start -->
-			<div id="native_level_wrap">
-				<div class="native_level_box">
-					<div class="native_level_title_box clearfix">
-						<div class="native_level_title_left">
-							<div class="native_level_titleC">
-								<h2>自然生态</h2>
-								<h2>温馨简美</h2>
-							</div>
-							<div class="native_level_title_desc">
-								<p>用心品味，温暖总在不经意间流露，</p>
-								<p>浪漫与优雅，在这里留下时间的痕迹。</p>
-							</div>
-						</div>
-						<div class="native_level_title_line"></div>
-						<div class="native_level_title_right">
-							<p class="native_level_titleE">Natural Ecology</p>
-						</div>
-					</div>
-					<div class="native_level_show">
-						<ul>
-							<li class="native_level_list">
-								<img src="~/assets/images/experice-nj/native_level_list1.png" alt="">
-							</li>
-							<li class="native_level_list">
-								<img src="~/assets/images/experice-nj/native_level_list2.png" alt="">
-							</li>
-							<li class="native_level_list">
-								<img src="~/assets/images/experice-nj/native_level_list3.png" alt="">
-							</li>
-							<li class="native_level_list">
-								<img src="~/assets/images/experice-nj/native_level_list4.png" alt="">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Native Level end -->
-			
-			<!-- Elegant Style start -->
-			<div id="elegant_style_wrap">
-				<div class="elegant_style_box">
-					<div class="elegant_style_title_box clearfix">
-						<div class="elegant_style_title_left">
-							<div class="elegant_style_titleC">
-								<h2>纯正欧式</h2>
-								<h2>一墅繁华</h2>
-							</div>
-							<div class="elegant_style_title_desc">
-								<p>梦幻的色彩，华美的装饰，</p>
-								<p>精致的造型，欧式高贵典雅的格调尽显。</p>
-							</div>
-						</div>
-						<div class="elegant_style_title_line"></div>
-						<div class="elegant_style_title_right">
-							<p class="elegant_style_titleE">Pure European</p>
-						</div>
-					</div>
-					<div class="elegant_style_show">
-						<ul>
-							<li class="elegant_style_list">
-								<img src="~/assets/images/experice-nj/elegant_style_list1.png" alt="">
-							</li>
-							<li class="elegant_style_list">
-								<img src="~/assets/images/experice-nj/elegant_style_list2.png" alt="">
-							</li>
-							<li class="elegant_style_list">
-								<img src="~/assets/images/experice-nj/elegant_style_list3.png" alt="">
-							</li>
-							<li class="elegant_style_list">
-								<img src="~/assets/images/experice-nj/elegant_style_list4.png" alt="">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Elegant Style end -->
-
-			<!-- Chinese Style start -->
-			<div id="chinese_style_wrap">
-				<div class="chinese_style_box">
-					<div class="chinese_style_title_box clearfix">
-						<div class="chinese_style_title_left">
-							<div class="chinese_style_titleC">
-								<h2>新中式</h2>
-								<h2>心中势</h2>
-							</div>
-							<div class="chinese_style_title_desc">
-								<p>于传统美学规范之下，</p>
-								<p>赋予古典中式家具新的生命力 </p>
-								<p>打破现实世界的樊篱，直面内心的那份静谧。</p>
-								<p>融古典，辟新境。。</p>
-							</div>
-						</div>
-						<div class="chinese_style_title_line"></div>
-						<div class="chinese_style_title_right">
-							<p class="chinese_style_titleE">NEO-Chinese style</p>
-						</div>
-					</div>
-					<div class="chinese_style_show">
-						<ul>
-							<li class="chinese_style_list">
-								<img src="~/assets/images/experice-nj/chinese_style_list1.png" alt="">
-							</li>
-							<li class="chinese_style_list">
-								<img src="~/assets/images/experice-nj/chinese_style_list2.png" alt="">
-							</li>
-							<li class="chinese_style_list">
-								<img src="~/assets/images/experice-nj/chinese_style_list3.png" alt="">
-							</li>
-							<li class="chinese_style_list">
-								<img src="~/assets/images/experice-nj/chinese_style_list4.png" alt="">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- Chinese Style end -->
-
-			<!-- Natural Style start -->
-			<div id="natural_style_wrap">
-				<div class="natural_style_box">
-					<div class="natural_style_title_box clearfix">
-						<div class="natural_style_title_left">
-							<div class="natural_style_titleC">
-								<h2>经典大美</h2>
-								<h2>时尚韵味</h2>
-							</div>
-							<div class="natural_style_title_desc">
-								<p>岁月静好中，幸福寂静流淌，</p>
-								<p>深邃沉静中，时尚之韵来袭。</p>
-							</div>
-						</div>
-						<div class="natural_style_title_line"></div>
-						<div class="natural_style_title_right">
-							<p class="natural_style_titleE">Natural</p>
-						</div>
-					</div>
-					<div class="natural_style_show">
-						<ul>
-							<li class="natural_style_list">
-								<img src="~/assets/images/experice-nj/natural_style_list1.png" alt="">
-							</li>
-							<li class="natural_style_list">
-								<img src="~/assets/images/experice-nj/natural_style_list2.png" alt="">
-							</li>
-							<li class="natural_style_list">
-								<img src="~/assets/images/experice-nj/natural_style_list3.png" alt="">
-							</li>
-							<li class="natural_style_list">
-								<img src="~/assets/images/experice-nj/natural_style_list4.png" alt="">
-							</li>
-						</ul>
-					</div>
-					<div class="natural_style_more">
-						<p>更多系列，到店尊享</p>
-					</div>
-				</div>
-			</div>
-			<!-- Natural Style end -->
-
-			<expericeVideo></expericeVideo>
-			
+		<expericeStyle :styleData="nativeStyleData"></expericeStyle>
+		<expericeStyle :styleData="elegantStyleData"></expericeStyle>
+		<expericeStyle :styleData="chineseStyleData"></expericeStyle>
+		<expericeStyle :styleData="naturalStyleData"></expericeStyle>
+		<expericeVideo></expericeVideo>
+		
 			<!-- High Lights start -->
 			<div id="high_lights_wrap">
 				<div class="high_lights_box">
@@ -303,7 +145,7 @@
 	import expericePlaceDesc from '~/components/experice/expericePlaceDesc'
 	import expericePeopleDesc from '~/components/experice/expericePeopleDesc'
 	import expericePanoramic from '~/components/experice/expericePanoramic'
-
+	import expericeStyle from '~/components/experice/expericeStyle'
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
 
@@ -368,6 +210,59 @@
 						}
 					]
 				},
+				nativeStyleData: {
+					styleTitle: ['自然生态','温馨简美'],
+					styleDesc: ['用心品味，温暖总在不经意间流露，','浪漫与优雅，在这里留下时间的痕迹。'],
+					styleDescEn: 'Natural Ecology',
+					styleImg: [
+						'http://img.visney.cn/img/nuxtPc/experice-nj/native_level_list1.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/native_level_list2.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/native_level_list3.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/native_level_list4.png'
+					],
+					styleMore: false,
+					changeRight: false
+
+				},
+				elegantStyleData: {
+					styleTitle: ['纯正欧式','一墅繁华'],
+					styleDesc: ['梦幻的色彩，华美的装饰，','精致的造型，欧式高贵典雅的格调尽显。'],
+					styleDescEn: 'Pure European',
+					styleImg: [
+						'http://img.visney.cn/img/nuxtPc/experice-nj/elegant_style_list1.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/elegant_style_list2.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/elegant_style_list3.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/elegant_style_list4.png'
+					],
+					styleMore: false,
+					changeRight: true
+				},
+				chineseStyleData: {
+					styleTitle: ['新中式','心中势'],
+					styleDesc: ['于传统美学规范之下，','赋予古典中式家具新的生命力','打破现实世界的樊篱，直面内心的那份静谧。','融古典，辟新境。'],
+					styleDescEn: 'NEW Chinese style',
+					styleImg: [
+						'http://img.visney.cn/img/nuxtPc/experice-nj/chinese_style_list1.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/chinese_style_list2.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/chinese_style_list3.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/chinese_style_list4.png'
+					],
+					styleMore: false,
+					changeRight: false
+				},
+				naturalStyleData: {
+					styleTitle: ['经典大美','时尚韵味'],
+					styleDesc: ['岁月静好中，幸福寂静流淌，','深邃沉静中，时尚之韵来袭。'],
+					styleDescEn: 'Natural',
+					styleImg: [
+						'http://img.visney.cn/img/nuxtPc/experice-nj/natural_style_list1.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/natural_style_list2.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/natural_style_list3.png',
+						'http://img.visney.cn/img/nuxtPc/experice-nj/natural_style_list4.png'
+					],
+					styleMore: true,
+					changeRight: true
+				},
 				longitude: 118.751323,
 				latitude: 32.039674,
 				title: '南京体验店',
@@ -379,6 +274,7 @@
 			expericePlaceDesc,
 			expericePeopleDesc,
 			expericePanoramic,
+			expericeStyle,
 			BMap,
 			expericeVideo,
 			lineService
