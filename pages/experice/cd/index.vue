@@ -125,7 +125,7 @@
 
 				},
 				nativeStyleData: {
-					styleTitle: '体验馆 第一层',
+					styleTitle: ['体验馆 第一层'],
 					styleDesc: ['麦巴赫·纽约摩登系列','美的产品传递出来的是人和世界的理解'],
 					styleDescEn: 'Beautiful products',
 					styleImg: [
@@ -139,7 +139,7 @@
 
 				},
 				elegantStyleData: {
-					styleTitle: '体验馆 第二层',
+					styleTitle: ['体验馆 第二层'],
 					styleDesc: ['麦巴赫·纽约摩登系列','宾丽·美式简奢系列  比弗利·新现代轻奢系列','爱把简单生活过成甜'],
 					styleDescEn: 'Sweet',
 					styleImg: [
@@ -152,7 +152,7 @@
 					changeRight: true
 				},
 				chineseStyleData: {
-					styleTitle: '体验馆 第三层',
+					styleTitle: ['体验馆 第三层'],
 					styleDesc: ['丘吉尔庄园·英式名流系列 杜兰戈美式系列','梵地亚欧式II系列  翡丽·后现代高端艺术系列','愈品味，愈懂品味'],
 					styleDescEn: 'Understand taste',
 					styleImg: [
@@ -165,7 +165,7 @@
 					changeRight: false
 				},
 				naturalStyleData: {
-					styleTitle: '体验馆 第四层',
+					styleTitle: ['体验馆 第四层'],
 					styleDesc: ['溯·东方新中式系列  麦巴赫·纽约摩登系列','延祚·中式刺猬紫系列 佩洛·北欧系列  大斑马木系列','纯粹生态，自然礼遇'],
 					styleDescEn: 'Natural',
 					styleImg: [

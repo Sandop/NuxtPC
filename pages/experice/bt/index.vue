@@ -125,7 +125,7 @@
 					]
 				},
 				nativeStyleData: {
-					styleTitle: '纯正美式·浪漫奢华',
+					styleTitle: ['纯正美式·浪漫奢华'],
 					styleDesc: ['美式风格代表了一种自在，随意不羁的一活方式，','没有太多造作的修饰与约不经意间，也成为另一种浪漫。'],
 					styleDescEn: 'Native speaker leve',
 					styleImg: [
@@ -139,7 +139,7 @@
 
 				},
 				elegantStyleData: {
-					styleTitle: '欧式典雅·一墅繁华',
+					styleTitle: ['欧式典雅·一墅繁华'],
 					styleDesc: ['即使经过岁月的洗礼','欧式家具依旧散发着古典优雅的高贵气息。'],
 					styleDescEn: 'ID Book',
 					styleImg: [
@@ -152,7 +152,7 @@
 					changeRight: true
 				},
 				chineseStyleData: {
-					styleTitle: '新中式·心中势',
+					styleTitle: ['新中式·心中势'],
 					styleDesc: ['线条简单流畅、精雕细琢，具有传统中式的元素的同时，','对美的追求，也达到了极致。'],
 					styleDescEn: 'New Chinese style',
 					styleImg: [

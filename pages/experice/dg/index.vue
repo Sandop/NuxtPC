@@ -125,7 +125,7 @@
 					]
 				},
 				nativeStyleData: {
-					styleTitle: '体验馆 第一层',
+					styleTitle: ['体验馆 第一层'],
 					styleDesc: ['格列佛简美系列 杜兰戈简美系列 ','波兰特简美系列'],
 					styleDescEn: 'American',
 					styleImg: [
@@ -139,7 +139,7 @@
 
 				},
 				elegantStyleData: {
-					styleTitle: '体验馆 第二层',
+					styleTitle: ['体验馆 第二层'],
 					styleDesc: ['德国馆 凯撒皇宫奢华定制意式系列','梵地亚欧式系列 赫莎'],
 					styleDescEn: 'Luxury',
 					styleImg: [
@@ -152,7 +152,7 @@
 					changeRight: true
 				},
 				chineseStyleData: {
-					styleTitle: '体验馆 第三层',
+					styleTitle: ['体验馆 第三层'],
 					styleDesc: ['比利时馆 华兹华斯新古典系列','玛尔玛索美式系列 圣保罗美式系列'],
 					styleDescEn: 'Distinguished',
 					styleImg: [
