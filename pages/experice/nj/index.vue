@@ -12,34 +12,7 @@
 		<expericeVideo></expericeVideo>
 		<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
 		<commonMap :mapData="mapData"></commonMap>		 
-			
-			<!-- Place Address start -->
-			<div id="place_address_wrap">
-				<div class="place_address_box">
-					<div class="place_address_details">
-						<h3>体验店地址：</h3>
-						<p>南京市建邺区水西门大街285号289号万达金街东区  距离南京禄口国际机场40公里，大约车程30分钟，</p>
-						<p>距离南京南站（火车/高铁）10公里，大约车程为10分钟</p>
-					</div>
-					<div class="place_address_phone">
-						<div class="place_address_phone1">
-							<p>线下招商热线：</p>
-							<h3>400 900 6267</h3>
-						</div>
-						<div class="place_address_phone1">
-							<p>招商加盟联系人 PENNY</p>
-							<h3>17302633888</h3>
-						</div>
-					</div>
-					<div class="place_address_contact">
-						<p>为了保证您参观的尊贵体验，来时请提前预约</p>
-						<div class="place_address_contact_num">
-							<h3>18686152121</h3><p>(叶总) </p><h3>025-52458886</h3><h3>025-85331879</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Place Address start -->
+		<expericeAddress :addressData="addressData"></expericeAddress>	
 	</section>
 </template>
 
@@ -54,6 +27,7 @@
 	import expericeHighLights from '~/components/experice/expericeHighLights'
 	import lineService from '~/components/experice/lineService.vue'
 	import commonMap from '~/components/common/commonMap'
+	import expericeAddress from '~/components/experice/expericeAddress'
 
 	export default {
 		data (){
@@ -229,6 +203,19 @@
 					latitude: 32.039674,
 					title: '南京体验店',
 					description: '地址：南京市建邺区水西门大街285号289号万达金街东区'
+				},
+				addressData: {
+					addressDetils: [
+						'南京市建邺区水西门大街285号289号万达金街东区', 
+						'距离南京禄口国际机场40公里，大约车程30分钟', 
+						'距离南京南站（火车/高铁）10公里，大约车程为10分钟'
+					],
+					hotLineTitle: '线下招商热线：',
+					hotLineNum: '400 900 6267',
+					phoneTitle: '招商加盟联系人 PENNY',
+					phoneNum: '17302633888',
+					contentNum: '18686152121',
+					contentPeople: '(叶总)'
 				}
 			}
 		},
@@ -241,128 +228,31 @@
 			expericeHighLights,
 			commonMap,
 			expericeVideo,
-			lineService
+			lineService,
+			expericeAddress
 		},
 		head () {
-		  return {
-		    title:this.metaData.navigationTitle,
-		    meta: [
-		      {name:'keywords',hid: 'keywords',content:`${this.metaData.navigationKeyword}`},
-		      {name:'description',hid:'description',content:`${this.metaData.navigationDescription}`}
-		    ],
-			script: [
-				{src:'http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB'}
-			]
-		  }
+			return {
+				title:this.metaData.navigationTitle,
+				meta: [
+					{name:'keywords',hid: 'keywords',content:`${this.metaData.navigationKeyword}`},
+					{name:'description',hid:'description',content:`${this.metaData.navigationDescription}`}
+				],
+				script: [
+					{src:'http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB'}
+				]
+			}
 		},
 		async asyncData({params,store}){
-		  //head信息
-		    let metaData = await axios(`${store.state.wordpressAPI}/NavigationMeta/get/22`);
-		  return {
-		    metaData: metaData.data,
-		  } 
+			//head信息
+			let metaData = await axios(`${store.state.wordpressAPI}/NavigationMeta/get/22`);
+			return {
+				metaData: metaData.data,
+			} 
 		}
 	}
 </script>
 
 <style scoped>
-
-	/*Place Address start*/
-		div#place_address_wrap {
-		    width:  100%;
-		    background:  #f9f9fa;
-		}
-
-		.place_address_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding: 140px 0 210px;
-		}
-
-		.place_address_details {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    text-align:  center;
-		}
-
-		.place_address_box p {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  24px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  24px;
-		    text-align:  center;
-		}
-
-		.place_address_details h3 {
-		    overflow:  hidden;
-		    width: 100%;
-		    height: 40px;
-		    color:  #25232d;
-		    font-size:  24px;
-		    font-weight:  bold;
-		    line-height: 40px;
-		    text-align:  center;
-		}
-
-		.place_address_phone {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    padding: 60px 0 67px;
-		    text-align:  center;
-		}
-
-		.place_address_phone1 {
-		    display:  inline-block;
-		    width:  300px;
-		    height:  auto;
-		}
-
-		.place_address_phone1 h3 {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 40px;
-		    color: #25232d;
-		    font-size: 24px;
-		    font-weight: bold;
-		    line-height: 40px;
-		    text-align: center;
-		}
-
-		.place_address_contact {
-		    overflow:  hidden;
-		    width:  100%;
-		}
-
-		.place_address_contact_num {
-		    overflow:  hidden;
-		    text-align:  center;
-		}
-
-		.place_address_contact_num h3 {
-		    display: inline-block;
-		    overflow: hidden;
-		    height: 40px;
-		    margin-left: 20px;
-		    color: #25232d;
-		    font-size: 24px;
-		    font-weight: bold;
-		    line-height: 40px;
-		    text-align: center;
-		}
-
-		.place_address_contact_num p {
-		    display:  inline-block;
-		    width:  auto;
-		    height:  40px;
-		    line-height: 40px;
-		}
-	/*Place Address end*/
-
 
 </style>

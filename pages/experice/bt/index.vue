@@ -11,39 +11,9 @@
 		<expericeVideo></expericeVideo>
 		<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
 		<commonMap :mapData="mapData"></commonMap>	
-		
-		<!-- Place Address start -->
-		<div id="place_address_wrap">
-			<div class="place_address_box">
-				<div class="place_address_details">
-					<h3>体验店地址：</h3>
-					<p>包头市青山区传媒大厦B座117卫诗理包头店</p>
-					<p>距离包头二里半机场19.9公里，加车需36分钟，</p>
-					<p>距离包头火车站6.6公里，加车需12分钟距离火车站包头东站18.2公里，驾车需33分钟</p>
-				</div>
-				<div class="place_address_phone">
-					<div class="place_address_phone1">
-						<p>线下招商热线：</p>
-						<h3>400 900 6267</h3>
-					</div>
-					<div class="place_address_phone1">
-						<p>预约电话（penny）</p>
-						<h3>17302633888</h3>
-					</div>
-				</div>
-				<div class="place_address_contact">
-					<p>为了保证您参观的尊贵体验，来时请提前预约</p>
-					<div class="place_address_contact_num">
-						<h3>18686152121</h3><p>（杨先生）</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Place Address start -->
-
+		<expericeAddress :addressData="addressData"></expericeAddress>
 	</section>
 </template>
-
 
 <script>
 	import axios from 'axios'
@@ -56,6 +26,7 @@
 	import expericeVideo from '~/components/experice/expericeVideo'
 	import expericeHighLights from '~/components/experice/expericeHighLights'
 	import commonMap from '~/components/common/commonMap'
+	import expericeAddress from '~/components/experice/expericeAddress'
 
 	export default {
 		data (){
@@ -214,6 +185,20 @@
 					latitude: 40.651567,
 					title: '包头体验店',
 					description: '地址：包头市青山区传媒大厦B座117卫诗理包头店'
+				},
+				addressData: {
+					addressDetils: [
+						'包头市青山区传媒大厦B座117卫诗理包头店', 
+						'距离包头二里半机场19.9公里，驾车需36分钟，', 
+						'距离包头火车站6.6公里，驾车需12分钟', 
+						'距离火车站包头东站18.2公里，驾车需33分钟'
+					],
+					hotLineTitle: '线下招商热线：',
+					hotLineNum: '400 900 6267',
+					phoneTitle: '预约电话（penny）',
+					phoneNum: '17302633888',
+					contentNum: '18686152121',
+					contentPeople: '（杨先生）'
 				}
 			}
 		},
@@ -226,7 +211,8 @@
 			expericeStyle,
 			commonMap,
 			expericeVideo,
-			lineService
+			lineService,
+			expericeAddress
 		},
 		head () {
 			return {
@@ -252,99 +238,4 @@
 
 <style scoped>
 
-	/*Place Address start*/
-		div#place_address_wrap {
-		    width:  100%;
-		    background:  #f9f9fa;
-		}
-
-		.place_address_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding: 140px 0 210px;
-		}
-
-		.place_address_details {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    text-align:  center;
-		}
-
-		.place_address_box p {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  24px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  24px;
-		    text-align:  center;
-		}
-
-		.place_address_details h3 {
-		    overflow:  hidden;
-		    width: 100%;
-		    height: 40px;
-		    color:  #25232d;
-		    font-size:  24px;
-		    font-weight:  bold;
-		    line-height: 40px;
-		    text-align:  center;
-		}
-
-		.place_address_phone {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    padding: 60px 0 67px;
-		    text-align:  center;
-		}
-
-		.place_address_phone1 {
-		    display:  inline-block;
-		    width:  300px;
-		    height:  auto;
-		}
-
-		.place_address_phone1 h3 {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 40px;
-		    color: #25232d;
-		    font-size: 24px;
-		    font-weight: bold;
-		    line-height: 40px;
-		    text-align: center;
-		}
-
-		.place_address_contact {
-		    overflow:  hidden;
-		    width:  100%;
-		}
-
-		.place_address_contact_num {
-		    overflow:  hidden;
-		    text-align:  center;
-		}
-
-		.place_address_contact_num h3 {
-		    display: inline-block;
-		    overflow: hidden;
-		    height: 40px;
-		    color: #25232d;
-		    font-size: 24px;
-		    font-weight: bold;
-		    line-height: 40px;
-		    text-align: center;
-		}
-
-		.place_address_contact_num p {
-		    display:  inline-block;
-		    width:  auto;
-		    height:  40px;
-		    line-height: 40px;
-		}	
-	/*Place Address end*/
 </style>

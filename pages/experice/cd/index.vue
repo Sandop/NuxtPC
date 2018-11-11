@@ -12,35 +12,7 @@
 		<expericeVideo></expericeVideo>
 		<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
 		<commonMap :mapData="mapData"></commonMap>	
-			
-			<!-- Place Address start -->
-			<div id="place_address_wrap">
-				<div class="place_address_box">
-					<div class="place_address_details">
-						<h3>体验店地址：</h3>
-						<p>成都市武侯区首信红星国际广场1号楼卫诗理家具旗舰店</p>
-						<p>距离双流机场8公里，驾车需17分钟</p>
-						<p>距离火车站成都站20公里，驾车需38分钟，距离火车站成都东站21公里，驾车需40分钟</p>
-					</div>
-					<div class="place_address_phone">
-						<div class="place_address_phone1">
-							<p>线下招商热线：</p>
-							<h3>400 900 6267</h3>
-						</div>
-						<div class="place_address_phone1">
-							<p>预约电话（李姐 Lecoo）</p>
-							<h3>15884588477</h3>
-						</div>
-					</div>
-					<div class="place_address_contact">
-						<p>为了保证您参观的尊贵体验，来时请提前预约</p>
-						<div class="place_address_contact_num">
-							<h3>02885007888</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Place Address start -->
+		<expericeAddress :addressData="addressData"></expericeAddress>	
 	</section>
 </template>
 
@@ -55,6 +27,8 @@
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
 	import commonMap from '~/components/common/commonMap'
+	import expericeAddress from '~/components/experice/expericeAddress'
+
 	export default {
 		data (){
 			return {
@@ -224,6 +198,19 @@
 					latitude: 30.6127248839,
 					title: '成都体验店',
 					description: '地址：成都市武侯区首信红星国际广场1号楼卫诗理家具旗舰店'
+				},
+				addressData: {
+					addressDetils: [
+						'成都市武侯区首信红星国际广场1号楼卫诗理家具旗舰店', 
+						'距离双流机场8公里，驾车需17分钟', 
+						'距离火车站成都站20公里，驾车需38分钟，距离火车站成都东站21公里，驾车需40分钟'
+					],
+					hotLineTitle: '线下招商热线：',
+					hotLineNum: '400 900 6267',
+					phoneTitle: '预约电话（李姐 Lecoo）',
+					phoneNum: '15884588477',
+					contentNum: '02885007888',
+					contentPeople: ''
 				}
 			}
 		},
@@ -236,7 +223,8 @@
 			expericeHighLights,
 			commonMap,
 			expericeVideo,
-			lineService
+			lineService,
+			expericeAddress
 		},
 		head () {
 		  return {
@@ -261,101 +249,5 @@
 </script>
 
 <style scoped>
-
-	/*Place Address start*/
-		div#place_address_wrap {
-		    width:  100%;
-		    background:  #f9f9fa;
-		}
-
-		.place_address_box {
-		    overflow:  hidden;
-		    width:  1200px;
-		    height:  auto;
-		    margin:  0 auto;
-		    padding: 140px 0 210px;
-		}
-
-		.place_address_details {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    text-align:  center;
-		}
-
-		.place_address_box p {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  24px;
-		    color:  #858585;
-		    font-size:  14px;
-		    line-height:  24px;
-		    text-align:  center;
-		}
-
-		.place_address_details h3 {
-		    overflow:  hidden;
-		    width: 100%;
-		    height: 40px;
-		    color:  #25232d;
-		    font-size:  24px;
-		    font-weight:  bold;
-		    line-height: 40px;
-		    text-align:  center;
-		}
-
-		.place_address_phone {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  auto;
-		    padding: 60px 0 67px;
-		    text-align:  center;
-		}
-
-		.place_address_phone1 {
-		    display:  inline-block;
-		    width:  300px;
-		    height:  auto;
-		}
-
-		.place_address_phone1 h3 {
-		    overflow: hidden;
-		    width: 100%;
-		    height: 40px;
-		    color: #25232d;
-		    font-size: 24px;
-		    font-weight: bold;
-		    line-height: 40px;
-		    text-align: center;
-		}
-
-		.place_address_contact {
-		    overflow:  hidden;
-		    width:  100%;
-		}
-
-		.place_address_contact_num {
-		    overflow:  hidden;
-		    text-align:  center;
-		}
-
-		.place_address_contact_num h3 {
-		    display: inline-block;
-		    overflow: hidden;
-		    height: 40px;
-		    color: #25232d;
-		    font-size: 24px;
-		    font-weight: bold;
-		    line-height: 40px;
-		    text-align: center;
-		}
-
-		.place_address_contact_num p {
-		    display:  inline-block;
-		    width:  auto;
-		    height:  40px;
-		    line-height: 40px;
-		}
-	/*Place Address end*/
 
 </style>
