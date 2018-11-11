@@ -32,10 +32,7 @@
 		<!-- Place Map start -->
 		<div id="place_map_wrap">
 			<div class="contact_place_map_box">
-				<div id="place_map">
-					<script type="text/javascript" async src="http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB"></script>
-					<BMap></BMap>
-				</div>
+				<commonMap :mapData="mapData"></commonMap>
 			</div>
 		</div>
 		<!-- Place Map end -->
@@ -136,22 +133,28 @@
 
 <script>
 	import axios from 'axios'
-	import BMap from '~/components/experice/BMap.vue'
+	import commonMap from '~/components/common/commonMap'
 
 	export default {
 		data (){
 			return {
+				mapData: {
+					longitude:  113.845282,
+					latitude: 22.613041,
+					title: '深圳市田田家园家具有限公司',
+					description: '地址：深圳市宝安区西乡街道泰华梧桐岛11栋5-9楼'
+				}
 			}
 		},
 		components: {
-			BMap,
+			commonMap
 		},
 		head () {
 		  return {
 		    title:this.metaData.navigationTitle,
 		    meta: [
-		      {name:'keywords',hid: 'keywords',content:`${this.metaData.navigationKeyword}`},
-		      {name:'description',hid:'description',content:`${this.metaData.navigationDescription}`}
+				{name:'keywords',hid: 'keywords',content:`${this.metaData.navigationKeyword}`},
+				{name:'description',hid:'description',content:`${this.metaData.navigationDescription}`}
 		    ],
 			script: [
 				{src:'http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB'}
@@ -159,11 +162,11 @@
 		  }
 		},
 		async asyncData({params,store}){
-		  //head信息
-		    let metaData = await axios(`${store.state.wordpressAPI}/NavigationMeta/get/17`);
-		  return {
-		    metaData: metaData.data,
-		  } 
+			//head信息
+			let metaData = await axios(`${store.state.wordpressAPI}/NavigationMeta/get/17`);
+			return {
+				metaData: metaData.data,
+			} 
 		},
 		methods: {
 			tabPlace (index){
@@ -275,16 +278,6 @@
 		    margin:  0 auto;
 		    padding:  75px 0 150px;
 		    border-top: 2px solid #d5d5d8;
-		}
-
-		#place_map {
-		    overflow:  hidden;
-		    width:  100%;
-		    height:  600px;
-		}
-
-		.anchorBL {
-			display:  none; 
 		}
 	/*Place Map end*/
 
