@@ -11,19 +11,7 @@
 		<expericeStyle :styleData="naturalStyleData"></expericeStyle>
 		<expericeVideo></expericeVideo>
 		<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
-			
-			
-			 
-			<!-- Bao Tou Map start -->
-			<div id="place_map_wrap">
-				<div class="place_map_box">
-					<div id="place_map">
-						<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB"></script>
-						<BMap :longitude="longitude" :latitude="latitude" :title="title" :description="description"></BMap>
-					</div>
-				</div>
-			</div>
-			<!-- Bao Tou Map end -->
+		<commonMap :mapData="mapData"></commonMap>	
 			
 			<!-- Place Address start -->
 			<div id="place_address_wrap">
@@ -67,7 +55,7 @@
 	import expericeHighLights from '~/components/experice/expericeHighLights'
 	import expericeVideo from '~/components/experice/expericeVideo.vue'
 	import lineService from '~/components/experice/lineService.vue'
-
+	import commonMap from '~/components/common/commonMap'
 	export default {
 		data (){
 			return {
@@ -232,10 +220,12 @@
 						}
 					]
 				},
-				longitude: 103.9864779602,
-				latitude: 30.6127248839,
-				title: '成都体验店',
-				description: '地址：成都市武侯区首信红星国际广场1号楼卫诗理家具旗舰店',
+				mapData: {
+					longitude: 103.9864779602,
+					latitude: 30.6127248839,
+					title: '成都体验店',
+					description: '地址：成都市武侯区首信红星国际广场1号楼卫诗理家具旗舰店'
+				}
 			}
 		},
 		components: {
@@ -245,7 +235,7 @@
 			expericePanoramic,
 			expericeStyle,
 			expericeHighLights,
-			BMap,
+			commonMap,
 			expericeVideo,
 			lineService
 		},
@@ -262,35 +252,16 @@
 		  }
 		},
 		async asyncData({params,store}){
-		  //head信息
-		    let metaData = await axios(`${store.state.wordpressAPI}/NavigationMeta/get/21`);
-		  return {
-		    metaData: metaData.data,
-		  } 
+			//head信息
+			let metaData = await axios(`${store.state.wordpressAPI}/NavigationMeta/get/21`);
+			return {
+				metaData: metaData.data,
+			} 
 		}
 	}
 </script>
 
 <style scoped>
-
-	/* Bao Tou Map start */
-		#place_map_wrap {
-		  width: 100%;
-		}
-		.place_map_box {
-		  overflow: hidden;
-		  width: 100%;
-		  height: 600px;
-		  margin: 0 auto;
-		}
-
-		div#place_map {
-			overflow: hidden;
-		    width:  100%;
-		    height:  100%;
-		}
-
-	/* Bao Tou Map end */
 
 	/*Place Address start*/
 		div#place_address_wrap {

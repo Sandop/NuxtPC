@@ -11,17 +11,7 @@
 		<expericeStyle :styleData="naturalStyleData"></expericeStyle>
 		<expericeVideo></expericeVideo>
 		<expericeHighLights :highLightsData="highLightsData"></expericeHighLights>
-			 
-			<!-- Bao Tou Map start -->
-			<div id="place_map_wrap">
-				<div class="place_map_box">
-					<div id="place_map">
-						<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB"></script>
-						<BMap :longitude="longitude" :latitude="latitude" :title="title" :description="description"></BMap>
-					</div>
-				</div>
-			</div>
-			<!-- Bao Tou Map end -->
+		<commonMap :mapData="mapData"></commonMap>		 
 			
 			<!-- Place Address start -->
 			<div id="place_address_wrap">
@@ -64,6 +54,7 @@
 	import expericeVideo from '~/components/experice/expericeVideo'
 	import expericeHighLights from '~/components/experice/expericeHighLights'
 	import lineService from '~/components/experice/lineService.vue'
+	import commonMap from '~/components/common/commonMap'
 
 	export default {
 		data (){
@@ -234,10 +225,12 @@
 						}
 					]
 				},
-				longitude: 118.751323,
-				latitude: 32.039674,
-				title: '南京体验店',
-				description: '地址：南京市建邺区水西门大街285号289号万达金街东区',
+				mapData: {
+					longitude: 118.751323,
+					latitude: 32.039674,
+					title: '南京体验店',
+					description: '地址：南京市建邺区水西门大街285号289号万达金街东区'
+				}
 			}
 		},
 		components: {
@@ -247,7 +240,7 @@
 			expericePanoramic,
 			expericeStyle,
 			expericeHighLights,
-			BMap,
+			commonMap,
 			expericeVideo,
 			lineService
 		},
@@ -274,23 +267,6 @@
 </script>
 
 <style scoped>
-	/* Bao Tou Map start */
-		#place_map_wrap {
-		  width: 100%;
-		}
-		.place_map_box {
-		  overflow: hidden;
-		  width: 100%;
-		  height: 600px;
-		  margin: 0 auto;
-		}
-
-		div#place_map {
-			overflow: hidden;
-		    width:  100%;
-		    height:  100%;
-		}
-	/* Bao Tou Map end */
 
 	/*Place Address start*/
 		div#place_address_wrap {
