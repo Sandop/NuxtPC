@@ -10,7 +10,7 @@
                             </div>
                             <div class="leader_said_video">
                                 <video id="leader_video" controls="controls" preload="auto" poster="http://img.visney.cn/img/banner_img/leader_said_video.jpg">
-                                    <source src="http://tbm-auth.alicdn.com/37AVcSkN1FW4wZdPwa7/9IDnBYcymx0wAspfNo2@@hd_hq.mp4?auth_key=1535512945-0-0-e8feed23f7f1efeebc33586e8107f379">
+                                    <source src="http://img.visney.cn/img/video/leader_said_video.mp4">
                                 </video>
                             </div>
                         </div>
